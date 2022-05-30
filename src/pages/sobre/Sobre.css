@@ -1,0 +1,21 @@
+.textos1{
+    font-weight: bold;
+    color: black;
+    }
+
+.margem{
+margin-bottom: 30px;
+}
+
+.form{
+padding: 3em 0 !important;
+width: 940px !important;
+margin: 0 auto !important;
+display: flex;
+flex-direction: column;
+margin-bottom: 30px;
+}
+
+form {
+    margin: 40px 0 !important;
+}
