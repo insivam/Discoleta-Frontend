@@ -49,7 +49,7 @@ function Login() {
       >
         <Grid xs={6} alignItems="center">
           <Box paddingX={20} paddingY={20}>
-            <form>
+          <form onSubmit={onSubmit}>
               <Typography
                 variant="h5"
                 gutterBottom
@@ -79,7 +79,6 @@ function Login() {
                 margin="normal"
                 type="password" fullWidth />
               <Box marginTop={2} textAlign="center">
-                <Link to="/home" className="Signin">
                   <Button
                     className="Signin"
                     type="submit"
@@ -88,7 +87,6 @@ function Login() {
                   >
                     Entrar
                   </Button>
-                </Link>
               </Box>
             </form>
             <Box display="flex" justifyContent="center" marginTop={2}>
