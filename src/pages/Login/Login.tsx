@@ -1,10 +1,47 @@
 import { Box, Button, Grid, TextField, Typography } from "@material-ui/core";
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { ChangeEvent, useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import useLocalStorage from "react-use-localstorage";
+import { login } from "../../services/Service";
+import UserLogin from "../../models/UserLogin";
 import "./Login.css";
 
 function Login() {
+  let navigate = useNavigate();
+    const [token, setToken] = useLocalStorage("token");
+    const [userLogin, setUserLogin] = useState<UserLogin>(
+        {
+            id: 0,
+            usuario: '',
+            senha: '',
+            token: ''
+        }
+    )
+
+    function updatedModel(e: ChangeEvent<HTMLInputElement>) {
+        setUserLogin({
+            ...userLogin,
+            [e.target.name]: e.target.value
+        })
+    }
+    useEffect(()=>{
+        if(token!=''){
+            navigate('/home')
+        }
+
+    },[token])
+    async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+        e.preventDefault();
+
+        try{
+            await login(`/usuarios/logar`, userLogin, setToken)
+            alert ("Usuário logado com sucesso!");
+        }catch(error){
+            alert("Dados do usuário inconsistentes. Erro ao logar")
+        }
+
+    }
   return (
     <>
       <Grid
@@ -24,7 +61,7 @@ function Login() {
                 align="center"
                 style={{ fontWeight: "bold" }}
               >
-                Sign in to Discoleta
+                Entrar no Discoleta
               </Typography>
               <TextField
                 id="usuario"
@@ -46,7 +83,7 @@ function Login() {
               <Box marginTop={2} textAlign="center">
                 <Link to="/home" className="Signin">
                   <Button className="Signin" type="submit" variant="contained" color="primary">
-                    Sign in
+                    Entrar
                   </Button>
                 </Link>
               </Box>
@@ -54,7 +91,7 @@ function Login() {
             <Box display="flex" justifyContent="center" marginTop={2}>
               <Box marginRight={1}>
                 <Typography variant="subtitle1" gutterBottom align="center">
-                New to Discoleta?
+                Novo no Discoleta?
                 </Typography>
               </Box>
               <Box>
@@ -65,7 +102,7 @@ function Login() {
                 align="center"
                 style={{ fontWeight: "bold" }}
               >
-                Create an account
+                Criar uma conta
               </Typography>
               </Link>
 
