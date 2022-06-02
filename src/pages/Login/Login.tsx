@@ -61,22 +61,23 @@ function Login() {
                 Entrar no Discoleta
               </Typography>
               <TextField
+                value={userLogin.usuario}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                 id="usuario"
-                label="E-mail"
+                label="usuário"
                 variant="outlined"
                 name="usuario"
-                margin="normal"
-                fullWidth
-              />
+                margin="normal" fullWidth />
+
               <TextField
+                value={userLogin.senha}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                 id="senha"
-                label="Password"
+                label="senha"
                 variant="outlined"
                 name="senha"
                 margin="normal"
-                type="password"
-                fullWidth
-              />
+                type="password" fullWidth />
               <Box marginTop={2} textAlign="center">
                 <Link to="/home" className="Signin">
                   <Button
