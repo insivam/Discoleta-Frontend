@@ -1,7 +1,8 @@
 import React from "react";
-import { Typography, Box, Grid, Button, TextField } from "@material-ui/core";
+import { Typography, Grid, Button, TextField } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import "./Sobre.css";
+import { Box } from "@mui/material";
 function Sobre() {
   return (
     <>

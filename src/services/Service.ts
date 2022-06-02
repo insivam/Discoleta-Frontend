@@ -1,7 +1,7 @@
-import axios from 'axios';
+import axios from 'axios'
 
 export const api = axios.create({
-    baseURL: 'https://insivam.herokuapp.com/'
+    baseURL: 'https://discoleta.herokuapp.com/'
 });
 
 export const cadastroUsuario = async(url: any,dados: any,setDado: any) => { 

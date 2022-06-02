@@ -15,6 +15,7 @@ function CadastroUsuario() {
     nome: "",
     usuario: "",
     senha: "",
+    foto: ""
   });
 
   const [userResult, setUserResult] = useState<User>({
@@ -22,6 +23,7 @@ function CadastroUsuario() {
     nome: "",
     usuario: "",
     senha: "",
+    foto: ""
   });
 
   useEffect(() => {
@@ -41,15 +43,28 @@ function CadastroUsuario() {
     });
   }
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-    e.preventDefault();
-    if (confirmarSenha == user.senha) {
-      cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult);
-      alert("Usuario cadastrado com sucesso");
-    } else {
-      alert(
-        "Dados inconsistentes. Favor verificar as informações de cadastro."
-      );
-    }
+      e.preventDefault()
+      if (confirmarSenha === user.senha && user.senha.length >= 8) {
+
+          //Tenta executar o cadastro
+          try {
+              await cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
+              alert("Usuário cadastrado com sucesso")
+
+              //Caso tenha algo diferente do padrão solicitado ele mostra mensagem de erro
+          } catch (error) {
+              console.log(`Error: ${error}`)
+
+              //Mensagem personalizada de acordo com o erro
+              alert("Erro existente")
+          }
+
+      } else {
+          alert("Insira no miníno 8 caracteres na senha.")
+
+          setUser({ ...user, senha: "" }) // Reinicia o campo de Senha
+          setConfirmarSenha("")           // Reinicia o campo de Confirmar Senha
+      }
   }
   return (
     <Grid container direction="row" justifyContent="center" alignItems="center">
