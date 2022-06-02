@@ -9,39 +9,35 @@ import "./Login.css";
 
 function Login() {
   let navigate = useNavigate();
-    const [token, setToken] = useLocalStorage("token");
-    const [userLogin, setUserLogin] = useState<UserLogin>(
-        {
-            id: 0,
-            usuario: '',
-            senha: '',
-            token: ''
-        }
-    )
+  const [token, setToken] = useLocalStorage("token");
+  const [userLogin, setUserLogin] = useState<UserLogin>({
+    id: 0,
+    usuario: "",
+    senha: "",
+    token: "",
+  });
 
-    function updatedModel(e: ChangeEvent<HTMLInputElement>) {
-        setUserLogin({
-            ...userLogin,
-            [e.target.name]: e.target.value
-        })
+  function updatedModel(e: ChangeEvent<HTMLInputElement>) {
+    setUserLogin({
+      ...userLogin,
+      [e.target.name]: e.target.value,
+    });
+  }
+  useEffect(() => {
+    if (token != "") {
+      navigate("/home");
     }
-    useEffect(()=>{
-        if(token!=''){
-            navigate('/home')
-        }
+  }, [token]);
+  async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+    e.preventDefault();
 
-    },[token])
-    async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-        e.preventDefault();
-
-        try{
-            await login(`/usuarios/logar`, userLogin, setToken)
-            alert ("Usuário logado com sucesso!");
-        }catch(error){
-            alert("Dados do usuário inconsistentes. Erro ao logar")
-        }
-
+    try {
+      await login(`/usuarios/logar`, userLogin, setToken);
+      alert("Usuário logado com sucesso!");
+    } catch (error) {
+      alert("Dados do usuário inconsistentes. Erro ao logar");
     }
+  }
   return (
     <>
       <Grid
@@ -82,7 +78,12 @@ function Login() {
               />
               <Box marginTop={2} textAlign="center">
                 <Link to="/home" className="Signin">
-                  <Button className="Signin" type="submit" variant="contained" color="primary">
+                  <Button
+                    className="Signin"
+                    type="submit"
+                    variant="contained"
+                    color="primary"
+                  >
                     Entrar
                   </Button>
                 </Link>
@@ -91,35 +92,29 @@ function Login() {
             <Box display="flex" justifyContent="center" marginTop={2}>
               <Box marginRight={1}>
                 <Typography variant="subtitle1" gutterBottom align="center">
-                Novo no Discoleta?
+                  Novo no Discoleta?
                 </Typography>
               </Box>
               <Box>
-              <Link to="/cadastro" className="Signin">
-              <Typography
-                variant="subtitle1"
-                gutterBottom
-                align="center"
-                style={{ fontWeight: "bold" }}
-              >
-                Criar uma conta
-              </Typography>
-              </Link>
-
+                <Link to="/cadastro" className="Signin">
+                  <Typography
+                    variant="subtitle1"
+                    gutterBottom
+                    align="center"
+                    style={{ fontWeight: "bold" }}
+                  >
+                    Criar uma conta
+                  </Typography>
+                </Link>
               </Box>
             </Box>
           </Box>
         </Grid>
-        <Grid xs={6} alignItems="center" className="back" >
-        <div style={{ minHeight: "100vh" }}>
-            <h1 className="teste">
-                TESTE
-            </h1>
-
-        </div>
-       
+        <Grid xs={6} alignItems="center" className="back">
+          <div style={{ minHeight: "100vh" }}>
+            <h1 className="teste">TESTE</h1>
+          </div>
         </Grid>
-       
       </Grid>
     </>
   );
