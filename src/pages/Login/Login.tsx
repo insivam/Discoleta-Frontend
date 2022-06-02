@@ -1,10 +1,44 @@
-import { Box, Button, Grid, TextField, Typography } from "@material-ui/core";
-import React from "react";
-import { Link } from "react-router-dom";
+import { Button, Grid, TextField, Typography } from "@material-ui/core";
+import React, { ChangeEvent, useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import useLocalStorage from "react-use-localstorage";
+import { login } from "../../services/Service";
+import UserLogin from "../../models/UserLogin";
 import "./Login.css";
+import { Box } from "@mui/material";
 
 function Login() {
+  let navigate = useNavigate();
+  const [token, setToken] = useLocalStorage("token");
+  const [userLogin, setUserLogin] = useState<UserLogin>({
+    id: 0,
+    usuario: "",
+    senha: "",
+    token: "",
+  });
+
+  function updatedModel(e: ChangeEvent<HTMLInputElement>) {
+    setUserLogin({
+      ...userLogin,
+      [e.target.name]: e.target.value,
+    });
+  }
+  useEffect(() => {
+    if (token != "") {
+      navigate("/home");
+    }
+  }, [token]);
+  async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    try {
+      await login(`/usuarios/logar`, userLogin, setToken);
+      alert("Usuário logado com sucesso!");
+    } catch (error) {
+      alert("Dados do usuário inconsistentes. Erro ao logar");
+    }
+  }
   return (
     <>
       <Grid
@@ -15,7 +49,7 @@ function Login() {
       >
         <Grid xs={6} alignItems="center">
           <Box paddingX={20} paddingY={20}>
-            <form>
+          <form onSubmit={onSubmit}>
               <Typography
                 variant="h5"
                 gutterBottom
@@ -24,65 +58,63 @@ function Login() {
                 align="center"
                 style={{ fontWeight: "bold" }}
               >
-                Sign in to Discoleta
+                Entrar no Discoleta
               </Typography>
               <TextField
+                value={userLogin.usuario}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                 id="usuario"
-                label="E-mail"
+                label="usuário"
                 variant="outlined"
                 name="usuario"
-                margin="normal"
-                fullWidth
-              />
+                margin="normal" fullWidth />
+
               <TextField
+                value={userLogin.senha}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                 id="senha"
-                label="Password"
+                label="senha"
                 variant="outlined"
                 name="senha"
                 margin="normal"
-                type="password"
-                fullWidth
-              />
+                type="password" fullWidth />
               <Box marginTop={2} textAlign="center">
-                <Link to="/home" className="Signin">
-                  <Button className="Signin" type="submit" variant="contained" color="primary">
-                    Sign in
+                  <Button
+                    className="Signin"
+                    type="submit"
+                    variant="contained"
+                    color="primary"
+                  >
+                    Entrar
                   </Button>
-                </Link>
               </Box>
             </form>
             <Box display="flex" justifyContent="center" marginTop={2}>
               <Box marginRight={1}>
                 <Typography variant="subtitle1" gutterBottom align="center">
-                New to Discoleta?
+                  Novo no Discoleta?
                 </Typography>
               </Box>
               <Box>
-              <Link to="/cadastro" className="Signin">
-              <Typography
-                variant="subtitle1"
-                gutterBottom
-                align="center"
-                style={{ fontWeight: "bold" }}
-              >
-                Create an account
-              </Typography>
-              </Link>
-
+                <Link to="/cadastro" className="Signin">
+                  <Typography
+                    variant="subtitle1"
+                    gutterBottom
+                    align="center"
+                    style={{ fontWeight: "bold" }}
+                  >
+                    Criar uma conta
+                  </Typography>
+                </Link>
               </Box>
             </Box>
           </Box>
         </Grid>
-        <Grid xs={6} alignItems="center" className="back" >
-        <div style={{ minHeight: "100vh" }}>
-            <h1 className="teste">
-                TESTE
-            </h1>
-
-        </div>
-       
+        <Grid xs={6} alignItems="center" className="back">
+          <div style={{ minHeight: "100vh" }}>
+            <h1 className="teste">TESTE</h1>
+          </div>
         </Grid>
-       
       </Grid>
     </>
   );

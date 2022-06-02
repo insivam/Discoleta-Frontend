@@ -6,6 +6,7 @@ import Footer from "./components/estaticos/footer/Footer";
 import Navbar from "./components/estaticos/navbar/Navbar";
 import Home from "./pages/home/Home"
 import Sobre from "./pages/sobre/Sobre"
+import Cadastro from "./pages/cadastro-usuario/CadastroUsuario"
 
 function App(): JSX.Element {
   return (
@@ -17,6 +18,7 @@ function App(): JSX.Element {
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/sobre" element={<Sobre />} />
+          <Route path="/cadastro" element={<Cadastro />} />
         </Routes>
       </div>
       <Footer />

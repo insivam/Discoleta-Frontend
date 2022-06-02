@@ -1,9 +1,10 @@
 import React from "react";
-import { AppBar, Toolbar, Typography, Box, Button } from "@material-ui/core";
+import { AppBar, Toolbar, Typography, Button } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import { Box } from "@mui/material";
 
 function NavBar() {
   return (
