@@ -1,6 +1,19 @@
 .link{
-    text-decoration: none;
+    text-decoration: none !important;
+    color: #000000 !important;
+    font-weight: bold !important;
 }
 .nav{
     color: white !important;
+}
+
+.meudeus{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.logout{
+    color: red !important;
 }

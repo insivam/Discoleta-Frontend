@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/tokensReducer";
 import { toast } from "react-toastify";
+import "./Home.css";
 
 function Home() {
   let navigate = useNavigate();
@@ -55,12 +56,12 @@ function Home() {
             </Button>
           </Box>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={6} className="back">
           <img
             src="https://cdn.discordapp.com/attachments/961308831533637685/980836772365881395/DISCOLETA_-_LOGO.jpg"
             alt=""
             width="500px"
-            height="500"
+            height="500px"
           />
         </Grid>
       </Grid>

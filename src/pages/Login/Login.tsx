@@ -8,6 +8,7 @@ import "./Login.css";
 import { Box } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { addToken } from "../../store/tokens/actions";
+import { toast } from "react-toastify";
 
 function Login() {
   let navigate = useNavigate();
@@ -37,9 +38,25 @@ function Login() {
 
     try {
       await login(`/usuarios/logar`, userLogin, setToken);
-      alert("Usuário logado com sucesso!");
+      toast.success("Usuario logado com sucesso!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+      });
     } catch (error) {
-      alert("Dados do usuário inconsistentes. Erro ao logar");
+      toast.success("Dados do usuario inconsistente!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+      });
     }
   }
   return (
@@ -49,8 +66,9 @@ function Login() {
         direction="row"
         justifyContent="center"
         alignItems="center"
+        className="teste1"
       >
-        <Grid xs={6} alignItems="center">
+        <Grid xs={6} alignItems="center" className="teste6">
           <Box paddingX={20} paddingY={20}>
             <form onSubmit={onSubmit}>
               <Typography
@@ -118,8 +136,16 @@ function Login() {
           </Box>
         </Grid>
         <Grid xs={6} alignItems="center" className="back">
-          <div style={{ minHeight: "100vh" }}>
-            <h1 className="teste">TESTE</h1>
+          <div style={{ minHeight: "100vh" }} className="teste2">
+            <Box className="teste2">
+              <img
+                src="https://cdn.discordapp.com/attachments/961308831533637685/980836772365881395/DISCOLETA_-_LOGO.jpg"
+                alt=""
+                width="500px"
+                height="500px"
+                className="teste"
+              />
+            </Box>
           </div>
         </Grid>
       </Grid>

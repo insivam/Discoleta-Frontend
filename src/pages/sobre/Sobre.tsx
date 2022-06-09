@@ -12,7 +12,6 @@ function Sobre() {
     (state) => state.tokens
   );
   let navigate = useNavigate();
-  const dispatch = useDispatch();
 
   function goLogout() {
     toast.info("Usuário deslogado", {
@@ -63,7 +62,16 @@ function Sobre() {
                 align="center"
                 className="textos1"
               >
-                Entre em contato
+                <Typography
+                  variant="h4"
+                  gutterBottom
+                  color="textPrimary"
+                  component="h4"
+                  align="center"
+                  className="textos2"
+                >
+                  Entre em contato com o Discoleta:
+                </Typography>
               </Typography>
               <TextField
                 id="nome"
@@ -71,6 +79,7 @@ function Sobre() {
                 variant="outlined"
                 name="nome"
                 margin="normal"
+                placeholder="Digite seu nome"
               />
               <TextField
                 id="email"
@@ -78,11 +87,20 @@ function Sobre() {
                 variant="outlined"
                 name="email"
                 margin="normal"
+                placeholder="Digite seu e-mail"
+              />
+              <TextField
+                id="assunto"
+                label="Assunto"
+                variant="outlined"
+                name="assunto"
+                margin="normal"
+                placeholder="Digite o assunto da mensagen"
               />
               <textarea
-                name="assunto"
-                placeholder="Assunto"
-                id="assunto"
+                name="mensagem"
+                placeholder="Digite sua mensagem!"
+                id="mensagem"
                 cols={50}
                 rows={10}
               />

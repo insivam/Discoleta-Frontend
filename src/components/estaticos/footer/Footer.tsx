@@ -81,14 +81,6 @@ function Footer() {
                   width="60"
                 />
               </a>
-              <a href="https://github.com/willjpg">
-                <img
-                  src="https://i.imgur.com/dSnD5bF.png"
-                  alt="Willian"
-                  height="60"
-                  width="60"
-                />
-              </a>
             </Box>
           </Box>
           <Box className="box2">

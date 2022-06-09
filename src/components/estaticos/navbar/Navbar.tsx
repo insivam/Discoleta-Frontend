@@ -4,7 +4,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import { addToken } from "../../../store/tokens/actions";
@@ -36,13 +36,13 @@ function NavBar() {
     //so aparece a navbar se tiver o token
     navbarComponent = (
       <AppBar position="static">
-        <Toolbar variant="dense">
+        <Toolbar variant="dense" className="meudeus">
           <Box style={{ cursor: "pointer" }}>
             <Typography variant="h5" color="inherit">
               Discoleta
             </Typography>
           </Box>
-          <Box display="flex" justifyContent="start">
+          <Box display="flex" justifyContent="start" className="meudeus">
             <Link to="/home" className="link">
               <Box mx={1} style={{ cursor: "pointer" }}>
                 <Typography variant="h6" color="inherit" className="nav">
@@ -64,6 +64,7 @@ function NavBar() {
                 </Typography>
               </Box>
             </Link>
+
             <Link to="/formularioTema" className="link">
               <Box mx={1} className="cursor">
                 <Typography variant="h6" color="inherit" className="nav">

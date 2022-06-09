@@ -19,3 +19,10 @@ margin-bottom: 30px;
 form {
     margin: 40px 0 !important;
 }
+
+.meio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

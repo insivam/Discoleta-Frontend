@@ -13,27 +13,32 @@ import ListaTema from "./components/temas/listaTema/ListaTema";
 import { Provider } from "react-redux";
 import store from "./store/store";
 import NotFoundPage from "./pages/notFoundPage/NotFoundPage";
-import { ToastContainer } from "react-toastify";
+import { Box, Grid, Stack } from "@mui/material";
+import NavBar from "./components/estaticos/navbar/Navbar";
 
 function App() {
   return (
     <Provider store={store}>
       <Router>
-        <Navbar />
-        <div style={{ minHeight: "100vh" }}>
-          <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/sobre" element={<Sobre />} />
-            <Route path="/cadastro" element={<Cadastro />} />
-            <Route path="/temas" element={<ListaTema />} />
-            <Route path="/formularioTema" element={<CadastroTema />} />
-            <Route path="/formularioTema/:id" element={<CadastroTema />} />
-            <Route path="/deletarTema/:id" element={<DeletarTema />} />
-            <Route path="/*" element={<NotFoundPage />} />
-          </Routes>
-        </div>
+        <Grid direction="column">
+          <Grid sm={2}>
+            <NavBar />
+          </Grid>
+          <div style={{ minHeight: "100vh" }}>
+            <Routes>
+              <Route path="/" element={<Login />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/sobre" element={<Sobre />} />
+              <Route path="/cadastro" element={<Cadastro />} />
+              <Route path="/temas" element={<ListaTema />} />
+              <Route path="/formularioTema" element={<CadastroTema />} />
+              <Route path="/formularioTema/:id" element={<CadastroTema />} />
+              <Route path="/deletarTema/:id" element={<DeletarTema />} />
+              <Route path="/*" element={<NotFoundPage />} />
+            </Routes>
+          </div>
+        </Grid>
         <Footer />
       </Router>
     </Provider>
