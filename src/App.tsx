@@ -4,25 +4,39 @@ import Login from "./pages/Login/Login";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from "./components/estaticos/footer/Footer";
 import Navbar from "./components/estaticos/navbar/Navbar";
-import Home from "./pages/home/Home"
-import Sobre from "./pages/sobre/Sobre"
-import Cadastro from "./pages/cadastro-usuario/CadastroUsuario"
+import Home from "./pages/home/Home";
+import Sobre from "./pages/sobre/Sobre";
+import Cadastro from "./pages/cadastro-usuario/CadastroUsuario";
+import CadastroTema from "./components/temas/cadastroTema/CadastroTema";
+import DeletarTema from "./components/temas/deletarTema/DeletarTema";
+import ListaTema from "./components/temas/listaTema/ListaTema";
+import { Provider } from "react-redux";
+import store from "./store/store";
+import NotFoundPage from "./pages/notFoundPage/NotFoundPage";
+import { ToastContainer } from "react-toastify";
 
-function App(): JSX.Element {
+function App() {
   return (
-    <Router>
-      <Navbar />
-      <div style={{ minHeight: '100vh' }}>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/sobre" element={<Sobre />} />
-          <Route path="/cadastro" element={<Cadastro />} />
-        </Routes>
-      </div>
-      <Footer />
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Navbar />
+        <div style={{ minHeight: "100vh" }}>
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/sobre" element={<Sobre />} />
+            <Route path="/cadastro" element={<Cadastro />} />
+            <Route path="/temas" element={<ListaTema />} />
+            <Route path="/formularioTema" element={<CadastroTema />} />
+            <Route path="/formularioTema/:id" element={<CadastroTema />} />
+            <Route path="/deletarTema/:id" element={<DeletarTema />} />
+            <Route path="/*" element={<NotFoundPage />} />
+          </Routes>
+        </div>
+        <Footer />
+      </Router>
+    </Provider>
   );
 }
 

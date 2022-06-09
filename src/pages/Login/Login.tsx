@@ -2,15 +2,17 @@ import { Button, Grid, TextField, Typography } from "@material-ui/core";
 import React, { ChangeEvent, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
 import { login } from "../../services/Service";
 import UserLogin from "../../models/UserLogin";
 import "./Login.css";
 import { Box } from "@mui/material";
+import { useDispatch } from "react-redux";
+import { addToken } from "../../store/tokens/actions";
 
 function Login() {
   let navigate = useNavigate();
-  const [token, setToken] = useLocalStorage("token");
+  const dispatch = useDispatch();
+  const [token, setToken] = useState("");
   const [userLogin, setUserLogin] = useState<UserLogin>({
     id: 0,
     usuario: "",
@@ -26,6 +28,7 @@ function Login() {
   }
   useEffect(() => {
     if (token != "") {
+      dispatch(addToken(token));
       navigate("/home");
     }
   }, [token]);
@@ -49,7 +52,7 @@ function Login() {
       >
         <Grid xs={6} alignItems="center">
           <Box paddingX={20} paddingY={20}>
-          <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit}>
               <Typography
                 variant="h5"
                 gutterBottom
@@ -67,7 +70,9 @@ function Login() {
                 label="usuário"
                 variant="outlined"
                 name="usuario"
-                margin="normal" fullWidth />
+                margin="normal"
+                fullWidth
+              />
 
               <TextField
                 value={userLogin.senha}
@@ -77,16 +82,18 @@ function Login() {
                 variant="outlined"
                 name="senha"
                 margin="normal"
-                type="password" fullWidth />
+                type="password"
+                fullWidth
+              />
               <Box marginTop={2} textAlign="center">
-                  <Button
-                    className="Signin"
-                    type="submit"
-                    variant="contained"
-                    color="primary"
-                  >
-                    Entrar
-                  </Button>
+                <Button
+                  className="Signin"
+                  type="submit"
+                  variant="contained"
+                  color="primary"
+                >
+                  Entrar
+                </Button>
               </Box>
             </form>
             <Box display="flex" justifyContent="center" marginTop={2}>

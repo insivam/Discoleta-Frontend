@@ -5,10 +5,18 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import React from "react";
 import "./Footer.css";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/tokensReducer";
 
 function Footer() {
-  return (
-    <>
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
+
+  var footerComponent;
+
+  if (token !== "") {
+    footerComponent = (
       <Grid
         container
         direction="row"
@@ -95,7 +103,11 @@ function Footer() {
               </Typography>
             </Box>
             <Box>
-              <a target="_blank" href="https://github.com/Discoleta">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://github.com/Discoleta"
+              >
                 <Typography
                   variant="subtitle2"
                   gutterBottom
@@ -109,8 +121,9 @@ function Footer() {
           </Box>
         </Grid>
       </Grid>
-    </>
-  );
+    );
+  }
+  return <>{footerComponent}</>;
 }
 
 export default Footer;

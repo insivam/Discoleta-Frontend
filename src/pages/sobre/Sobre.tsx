@@ -1,9 +1,32 @@
 import React from "react";
 import { Typography, Grid, Button, TextField } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Sobre.css";
 import { Box } from "@mui/material";
+import { toast } from "react-toastify";
+import { useDispatch, useSelector } from "react-redux";
+import { TokenState } from "../../store/tokens/tokensReducer";
+
 function Sobre() {
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
+  let navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  function goLogout() {
+    toast.info("Usuário deslogado", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+    navigate("/login");
+  }
+
   return (
     <>
       <Grid

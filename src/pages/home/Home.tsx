@@ -1,8 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Typography, Grid, Button } from "@material-ui/core";
 import { Box } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../store/tokens/tokensReducer";
+import { toast } from "react-toastify";
 
 function Home() {
+  let navigate = useNavigate();
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
+
+  useEffect(() => {
+    if (token == "") {
+      toast.warn("Você precisa estar logado!", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      navigate("/login");
+    }
+  }, [token]);
   return (
     <>
       <Grid
