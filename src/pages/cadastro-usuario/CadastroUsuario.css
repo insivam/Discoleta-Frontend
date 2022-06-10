@@ -14,3 +14,22 @@
 .btnCancelar{
     margin-right: 20px !important;
 }
+.back, .teste{
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50% !important;
+    animation: fadeInRight 2s;
+}
+
+.cadastro{
+    border-radius:  50% 50% 50% 50% / 50% 0% 0% 50% !important;
+    background-color: blue !important;
+    border-color: black !important;
+    
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.cadastro2{
+    width: max-content !important;
+}

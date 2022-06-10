@@ -6,10 +6,10 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import React from "react";
 import "./Footer.css";
 import { useSelector } from "react-redux";
-import { TokenState } from "../../../store/tokens/tokensReducer";
+import { UserState } from "../../../store/tokens/userReducer";
 
 function Footer() {
-  const token = useSelector<TokenState, TokenState["tokens"]>(
+  const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
   );
 
@@ -41,44 +41,48 @@ function Footer() {
               </Typography>
             </Box>
             <Box display="flex" alignItems="center" justifyContent="center">
-              <a href="https://github.com/alinerasche">
+              <a href="https://github.com/alinerasche" target="_blank">
                 <img
                   src="https://i.imgur.com/dSnD5bF.png"
                   alt="Aline"
-                  height="60"
-                  width="60"
+                  height="70"
+                  width="70"
                 />
               </a>
-              <a href="https://github.com/DayanaTito">
+
+              <a href="https://github.com/DayanaTito" target="_blank">
                 <img
-                  src="https://i.imgur.com/dSnD5bF.png"
+                  src="https://cdn.discordapp.com/attachments/961308831533637685/984525586179448872/Open_Peeps_-_Bust.png "
                   alt="Dayana"
-                  height="60"
-                  width="60"
+                  height="70"
+                  width="55"
                 />
               </a>
-              <a href="https://github.com/igorcanunes">
+
+              <a href="https://github.com/insivam" target="_blank">
                 <img
-                  src="https://i.imgur.com/dSnD5bF.png"
-                  alt="Igor"
-                  height="60"
-                  width="60"
-                />
-              </a>
-              <a href="https://github.com/insivam">
-                <img
-                  src="https://i.imgur.com/dSnD5bF.png"
+                  src="https://i.imgur.com/TOOJuII.png"
                   alt="Vitor"
-                  height="60"
+                  height="70"
+                  width="70"
+                />
+              </a>
+
+              <a href="https://github.com/milenaFO" target="_blank">
+                <img
+                  src="https://cdn.discordapp.com/attachments/961308831533637685/984532069021515847/Open_Peeps_-_Bust.png"
+                  alt="Milena"
+                  height="70"
                   width="60"
                 />
               </a>
-              <a href="https://github.com/milenaFO">
+
+              <a href="https://github.com/willjpg" target="_blank">
                 <img
-                  src="https://i.imgur.com/dSnD5bF.png"
-                  alt="Milena"
-                  height="60"
-                  width="60"
+                  src="https://i.imgur.com/KnDaMzC.png"
+                  alt="Willian"
+                  height="70"
+                  width="70"
                 />
               </a>
             </Box>

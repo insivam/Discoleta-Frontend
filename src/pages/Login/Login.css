@@ -1,7 +1,7 @@
 .teste{
     animation: fadeInRight 2s;
     padding: 10% !important;
-    margin-left: 1.5em;
+    margin-left: 1.5em !important;
     border-radius: 10px/20px !important;
 }
 

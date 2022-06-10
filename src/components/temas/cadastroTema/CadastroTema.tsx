@@ -5,12 +5,12 @@ import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import Tema from "../../../models/Tema";
 import { buscaId, post, put } from "../../../services/Service";
-import { TokenState } from "../../../store/tokens/tokensReducer";
+import { UserState } from "../../../store/tokens/userReducer";
 
 function CadastroTema() {
   let navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
-  const token = useSelector<TokenState, TokenState["tokens"]>(
+  const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
   );
   const [tema, setTema] = useState<Tema>({
@@ -23,7 +23,7 @@ function CadastroTema() {
     if (token === "") {
       toast.error("Você precisa estar logado para acessar essa página!", {
         position: "top-right",
-        autoClose: 5000,
+        autoClose: 1400,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
@@ -68,7 +68,7 @@ function CadastroTema() {
         });
         toast.success("Tema atualizado com sucesso!", {
           position: "top-right",
-          autoClose: 5000,
+          autoClose: 1400,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: false,
@@ -79,7 +79,7 @@ function CadastroTema() {
         console.log(`Error: ${error}`);
         toast.error("Erro, verifique a quantidade minima de caracteres!", {
           position: "top-right",
-          autoClose: 5000,
+          autoClose: 1400,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: false,
@@ -96,7 +96,7 @@ function CadastroTema() {
         });
         toast.success("Tema cadastrado com sucesso!", {
           position: "top-right",
-          autoClose: 5000,
+          autoClose: 1400,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: false,
@@ -107,7 +107,7 @@ function CadastroTema() {
         console.log(`Error: ${error}`);
         toast.error("Erro, verifique a quantidade minima de caracteres!", {
           position: "top-right",
-          autoClose: 5000,
+          autoClose: 1400,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: false,

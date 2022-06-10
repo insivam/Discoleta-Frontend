@@ -17,3 +17,8 @@
 .logout{
     color: red !important;
 }
+
+.nome{
+    font-weight: bold;
+    text-align: center;
+}

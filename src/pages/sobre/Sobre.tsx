@@ -5,10 +5,10 @@ import "./Sobre.css";
 import { Box } from "@mui/material";
 import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
-import { TokenState } from "../../store/tokens/tokensReducer";
+import { UserState } from "../../store/tokens/userReducer";
 
 function Sobre() {
-  const token = useSelector<TokenState, TokenState["tokens"]>(
+  const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
   );
   let navigate = useNavigate();

@@ -6,6 +6,7 @@ import { Grid, Typography, Button, TextField } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import "./CadastroUsuario.css";
 import { Box } from "@mui/system";
+import { toast } from "react-toastify";
 
 function CadastroUsuario() {
   let navigate = useNavigate();
@@ -15,7 +16,7 @@ function CadastroUsuario() {
     nome: "",
     usuario: "",
     senha: "",
-    foto: "",
+    foto: "https://i.imgur.com/0W0fPCC.png",
   });
 
   const [userResult, setUserResult] = useState<User>({
@@ -48,17 +49,44 @@ function CadastroUsuario() {
       //Tenta executar o cadastro
       try {
         await cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult);
-        alert("Usuário cadastrado com sucesso");
+        toast.success("Usuário cadastrado com sucesso!", {
+          position: "top-right",
+          autoClose: 1400,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+        });
 
         //Caso tenha algo diferente do padrão solicitado ele mostra mensagem de erro
       } catch (error) {
         console.log(`Error: ${error}`);
 
         //Mensagem personalizada de acordo com o erro
-        alert("Erro existente");
+        toast.error(
+          "Dados inconsistentes. Favor verificar as informações de cadastro.",
+          {
+            position: "top-right",
+            autoClose: 1400,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            progress: undefined,
+          }
+        );
       }
     } else {
-      alert("Insira no miníno 8 caracteres na senha.");
+      toast.error("Insira no miníno 8 caracteres na senha.", {
+        position: "top-right",
+        autoClose: 1400,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+      });
 
       setUser({ ...user, senha: "" }); // Reinicia o campo de Senha
       setConfirmarSenha(""); // Reinicia o campo de Confirmar Senha
@@ -66,14 +94,20 @@ function CadastroUsuario() {
   }
   return (
     <Grid container direction="row" justifyContent="center" alignItems="center">
-      <Grid xs={6} alignItems="center" className="back">
+      <Grid xs={6} justifyContent="center" alignItems="center" className="back">
         <div style={{ minHeight: "100vh" }}>
-          <h1 className="teste">TESTE</h1>
+          <img
+            src="https://cdn.discordapp.com/attachments/961308831533637685/980836772365881395/DISCOLETA_-_LOGO.jpg"
+            alt=""
+            width="500px"
+            height="500px"
+            className="teste"
+          />
         </div>
       </Grid>
-      <Grid item xs={6} alignItems="center">
-        <Box paddingX={10}>
-          <form onSubmit={onSubmit}>
+      <Grid item xs={6} className="cadastro">
+        <Box paddingX={10} className="right">
+          <form onSubmit={onSubmit} className="right">
             <Typography
               variant="h3"
               gutterBottom
@@ -88,7 +122,7 @@ function CadastroUsuario() {
               value={user.nome}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="nome"
-              label="nome"
+              label="Nome"
               variant="outlined"
               name="nome"
               margin="normal"
@@ -98,7 +132,7 @@ function CadastroUsuario() {
               value={user.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="usuario"
-              label="usuario"
+              label="Usuário"
               variant="outlined"
               name="usuario"
               margin="normal"
@@ -109,7 +143,7 @@ function CadastroUsuario() {
               value={user.foto}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="foto"
-              label="foto"
+              label="Foto"
               variant="outlined"
               name="foto"
               margin="normal"
@@ -119,12 +153,12 @@ function CadastroUsuario() {
               value={user.senha}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="senha"
-              label="senha"
+              label="Senha"
               variant="outlined"
               name="senha"
               margin="normal"
               type="password"
-              fullWidth
+              className="cadastro2"
             />
             <TextField
               value={confirmarSenha}
@@ -132,7 +166,7 @@ function CadastroUsuario() {
                 confirmarSenhaHandle(e)
               }
               id="confirmarSenha"
-              label="confirmarSenha"
+              label="Confirmar senha"
               variant="outlined"
               name="confirmarSenha"
               margin="normal"

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   AppBar,
   Toolbar,
@@ -25,10 +25,12 @@ import {
 import LogoutIcon from "@mui/icons-material/Logout";
 import { Box } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { TokenState } from "../../../store/tokens/tokensReducer";
+import { UserState } from "../../../store/tokens/userReducer";
 import { addToken } from "../../../store/tokens/actions";
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
+import { buscaId } from "../../../services/Service";
+import User from "../../../models/User";
 import "./Navbar.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -57,8 +59,19 @@ const listItems = [
 
   {
     listIcon: <AssignmentInd />,
-    listText: "perfil",
-    linked: "/home",
+    listText: "Perfil",
+    linked: "/perfil",
+  },
+  {
+    listIcon: <Apps />,
+    listText: "Postagens",
+    linked: "/posts",
+  },
+
+  {
+    listIcon: <Book />,
+    listText: "Cadastrar Postagem",
+    linked: "/formularioPostagem",
   },
 
   {
@@ -83,29 +96,27 @@ const listItems = [
 function Nav2() {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
-
   const toggleSlider = () => {
     setOpen(!open);
   };
 
   const sideList = () => (
     <Box className={classes.menuSliderContainer} component="div">
-      <Avatar
-        className={classes.avatar}
-        src="https://i.ibb.co/rx5DFbs/avatar.png"
-        alt="Juaneme8"
-      />
+      <Avatar className={classes.avatar} src={user.foto} alt="Foto de perfil" />
+      <Typography variant="h5" className="nome">
+        {user.nome}
+      </Typography>
       <Divider />
       <List>
         {listItems.map((listItem, index) => (
-          <ListItem className={classes.listItem} button key={index}>
-            <Link to={listItem.linked} className="link">
+          <Link to={listItem.linked} className="link">
+            <ListItem className={classes.listItem} button key={index}>
               <ListItemIcon className={classes.listItem}>
                 {listItem.listIcon}
               </ListItemIcon>
               <Typography className="link">{listItem.listText}</Typography>
-            </Link>
-          </ListItem>
+            </ListItem>
+          </Link>
         ))}
       </List>
       <Box style={{ cursor: "pointer" }} onClick={goLogout} marginLeft="15px">
@@ -120,9 +131,34 @@ function Nav2() {
   );
 
   // Funcionalidades do usuario
-  const token = useSelector<TokenState, TokenState["tokens"]>(
+  const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
   );
+  const id = useSelector<UserState, UserState["id"]>((state) => state.id);
+
+  const [user, setUser] = useState<User>({
+    id: +id, // Faz uma conversão de String para Number
+    nome: "",
+    usuario: "",
+    senha: "",
+    foto: "",
+  });
+
+  // Métedo para pegar os dados de um Usuário especifico pelo ID
+  async function findById(id: string) {
+    buscaId(`/usuarios/${id}`, setUser, {
+      headers: {
+        Authorization: token,
+      },
+    });
+  }
+
+  useEffect(() => {
+    if (id !== undefined) {
+      findById(id);
+    }
+  }, [id]);
+
   let navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -130,7 +166,7 @@ function Nav2() {
     dispatch(addToken("")); //transforma o token em vazio quando deslogar
     toast.info("Usuário deslogado", {
       position: "top-right",
-      autoClose: 3000,
+      autoClose: 1400,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -146,14 +182,13 @@ function Nav2() {
     navbarComponent = (
       <>
         <CssBaseline />
-
         <Box component="nav" position="fixed">
           <AppBar position="static">
             <Toolbar>
               <IconButton onClick={toggleSlider}>
                 <Menu />
               </IconButton>
-              <Typography>Portfolio</Typography>
+              <Typography></Typography>
               <Drawer open={open} anchor="left" onClose={toggleSlider}>
                 {sideList()}
               </Drawer>
