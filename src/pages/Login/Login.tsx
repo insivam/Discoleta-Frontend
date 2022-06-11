@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Box, Button, Grid, TextField, Typography } from "@material-ui/core";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -8,16 +9,20 @@ import "./Login.css";
 function Login() {
 =======
 import { Button, Grid, TextField, Typography } from "@material-ui/core";
+=======
+>>>>>>> 2b71c09f5029d802414004d40c1da6b38f3f8497
 import React, { ChangeEvent, useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { login } from "../../services/Service";
-import UserLogin from "../../models/UserLogin";
-import "./Login.css";
+import { Button, Grid, TextField, Typography } from "@material-ui/core";
 import { Box } from "@mui/material";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addToken } from "../../store/tokens/actions";
+
+import UserLogin from "../../models/UserLogin";
+import { login } from "../../services/Service";
+import { addId, addToken } from "../../store/tokens/actions";
 import { toast } from "react-toastify";
+
+import "./Login.css";
 
 function Login() {
   let navigate = useNavigate();
@@ -25,10 +30,29 @@ function Login() {
   const [token, setToken] = useState("");
   const [userLogin, setUserLogin] = useState<UserLogin>({
     id: 0,
+    nome: "",
     usuario: "",
+    senha: "",
+    foto: "",
+    token: "",
+  });
+
+  // Crie mais um State para pegar os dados retornados a API
+  const [respUserLogin, setRespUserLogin] = useState<UserLogin>({
+    id: 0,
+    nome: "",
+    usuario: "",
+    foto: "",
     senha: "",
     token: "",
   });
+
+  useEffect(() => {
+    if (token != "") {
+      dispatch(addToken(token));
+      navigate("/home");
+    }
+  }, [token]);
 
   function updatedModel(e: ChangeEvent<HTMLInputElement>) {
     setUserLogin({
@@ -36,20 +60,28 @@ function Login() {
       [e.target.name]: e.target.value,
     });
   }
+
   useEffect(() => {
-    if (token != "") {
-      dispatch(addToken(token));
+    if (respUserLogin.token !== "") {
+      // Verifica os dados pelo console (Opcional)
+      console.log("Token: " + respUserLogin.token);
+      console.log("ID: " + respUserLogin.id);
+
+      // Guarda as informações dentro do Redux (Store)
+      dispatch(addToken(respUserLogin.token));
+      dispatch(addId(respUserLogin.id.toString())); // Faz uma conversão de Number para String
       navigate("/home");
     }
-  }, [token]);
+  }, [respUserLogin.token]);
+
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
 
     try {
-      await login(`/usuarios/logar`, userLogin, setToken);
-      toast.success("Usuario logado com sucesso!", {
+      await login(`/usuarios/logar`, userLogin, setRespUserLogin);
+      toast.success("Usuário logado com sucesso!", {
         position: "top-right",
-        autoClose: 5000,
+        autoClose: 1400,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
@@ -57,9 +89,9 @@ function Login() {
         progress: undefined,
       });
     } catch (error) {
-      toast.success("Dados do usuario inconsistente!", {
+      toast.error("Dados do usuário inconsistente!", {
         position: "top-right",
-        autoClose: 5000,
+        autoClose: 1400,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
@@ -206,7 +238,7 @@ function Login() {
 =======
         <Grid xs={6} alignItems="center" className="back">
           <div style={{ minHeight: "100vh" }} className="teste2">
-            <Box className="teste2">
+            <Box>
               <img
                 src="https://cdn.discordapp.com/attachments/961308831533637685/980836772365881395/DISCOLETA_-_LOGO.jpg"
                 alt=""

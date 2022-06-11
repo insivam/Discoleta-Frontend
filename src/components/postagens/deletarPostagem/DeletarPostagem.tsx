@@ -1,40 +1,37 @@
 import React, { useEffect, useState } from "react";
 import {
+  Typography,
+  Button,
   Card,
   CardActions,
   CardContent,
-  Button,
-  Typography,
 } from "@material-ui/core";
-import "./DeletarTema.css";
+import "./DeletarPostagem.css";
 import { useNavigate, useParams } from "react-router-dom";
+import Postagem from "../../../models/Postagem";
 import { buscaId, deleteId } from "../../../services/Service";
+import { Box } from "@mui/material";
 import { useSelector } from "react-redux";
 import { UserState } from "../../../store/tokens/userReducer";
-import Tema from "../../../models/Tema";
 import { toast } from "react-toastify";
-import { Box } from "@mui/material";
 
-function DeletarTema() {
+function DeletarPostagem() {
   let navigate = useNavigate();
-
   const { id } = useParams<{ id: string }>();
-
+  const [post, setPosts] = useState<Postagem>();
   const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
   );
 
-  const [tema, setTema] = useState<Tema>();
-
   useEffect(() => {
-    if (token === "") {
+    if (token == "") {
       toast.error("Você precisa estar logado!", {
         position: "top-right",
-        autoClose: 3000,
+        autoClose: 1400,
         hideProgressBar: false,
         closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
+        pauseOnHover: false,
+        draggable: false,
         progress: undefined,
       });
       navigate("/login");
@@ -48,7 +45,7 @@ function DeletarTema() {
   }, [id]);
 
   async function findById(id: string) {
-    await buscaId(`/tema/${id}`, setTema, {
+    buscaId(`/postagens/${id}`, setPosts, {
       headers: {
         Authorization: token,
       },
@@ -56,13 +53,13 @@ function DeletarTema() {
   }
 
   function sim() {
-    navigate("/temas");
-    deleteId(`/tema/${id}`, {
+    navigate("/posts");
+    deleteId(`/postagens/${id}`, {
       headers: {
         Authorization: token,
       },
     });
-    toast.success("Tema deletado com sucesso!", {
+    toast.success("Postagem deletada com sucesso!", {
       position: "top-right",
       autoClose: 1400,
       hideProgressBar: false,
@@ -74,7 +71,7 @@ function DeletarTema() {
   }
 
   function nao() {
-    navigate("/temas");
+    navigate("/posts");
   }
 
   return (
@@ -84,9 +81,9 @@ function DeletarTema() {
           <CardContent>
             <Box justifyContent="center">
               <Typography color="textSecondary" gutterBottom>
-                Deseja deletar o Tema:
+                Deseja deletar a Postagem:
               </Typography>
-              <Typography color="textSecondary">{tema?.descricao}</Typography>
+              <Typography color="textSecondary">{post?.titulo}</Typography>
             </Box>
           </CardContent>
           <CardActions>
@@ -102,7 +99,7 @@ function DeletarTema() {
                   Sim
                 </Button>
               </Box>
-              <Box mx={2}>
+              <Box>
                 <Button
                   onClick={nao}
                   variant="contained"
@@ -119,4 +116,4 @@ function DeletarTema() {
     </>
   );
 }
-export default DeletarTema;
+export default DeletarPostagem;

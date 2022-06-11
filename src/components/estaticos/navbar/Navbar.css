@@ -22,5 +22,13 @@
 
 .logout{
     color: red !important;
+<<<<<<< HEAD
 >>>>>>> b0b6e2eb1ff17c45a8b9a97a0832f1793963fb30
+=======
+}
+
+.nome{
+    font-weight: bold;
+    text-align: center;
+>>>>>>> 2b71c09f5029d802414004d40c1da6b38f3f8497
 }

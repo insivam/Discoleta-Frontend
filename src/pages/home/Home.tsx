@@ -32,21 +32,22 @@ import { Typography, Grid, Button } from "@material-ui/core";
 import { Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { TokenState } from "../../store/tokens/tokensReducer";
+import { UserState } from "../../store/tokens/userReducer";
 import { toast } from "react-toastify";
 import "./Home.css";
+import ListaPostagem from "../../components/postagens/listapostagem/ListaPostagem";
 
 function Home() {
   let navigate = useNavigate();
-  const token = useSelector<TokenState, TokenState["tokens"]>(
+  const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
   );
 
   useEffect(() => {
     if (token == "") {
-      toast.warn("Você precisa estar logado!", {
+      toast.error("Você precisa estar logado!", {
         position: "top-right",
-        autoClose: 3000,
+        autoClose: 1400,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -70,10 +71,9 @@ function Home() {
             <Typography
               variant="h3"
               gutterBottom
-              color="textPrimary"
+              className="titulo font"
               component="h3"
               align="center"
-              className="titulo"
             >
               Bem-vindo(a) ao Discoleta!
             </Typography>
@@ -86,14 +86,15 @@ function Home() {
           </Box>
         </Grid>
         <Grid item xs={6} className="back">
-          <img
+          {/* <img
             src="https://cdn.discordapp.com/attachments/961308831533637685/980836772365881395/DISCOLETA_-_LOGO.jpg"
             alt=""
             width="500px"
-            height="500px"
-          />
+            height="250px"
+          /> */}
         </Grid>
       </Grid>
+      <ListaPostagem />
     </>
   );
 }

@@ -19,12 +19,12 @@ import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 import { Box, Grid } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { TokenState } from "../../../store/tokens/tokensReducer";
+import { UserState } from "../../../store/tokens/userReducer";
 import { addToken } from "../../../store/tokens/actions";
 import { toast } from "react-toastify";
 
 function NavBar() {
-  const token = useSelector<TokenState, TokenState["tokens"]>(
+  const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
   );
   let navigate = useNavigate();
