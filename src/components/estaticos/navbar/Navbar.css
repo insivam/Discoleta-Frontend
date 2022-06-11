@@ -1,6 +1,26 @@
 .link{
+<<<<<<< HEAD
     text-decoration: none;
 }
 .nav{
     color: white !important;
+=======
+    text-decoration: none !important;
+    color: #000000 !important;
+    font-weight: bold !important;
+}
+.nav{
+    color: white !important;
+}
+
+.meudeus{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.logout{
+    color: red !important;
+>>>>>>> b0b6e2eb1ff17c45a8b9a97a0832f1793963fb30
 }

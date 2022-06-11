@@ -1,6 +1,12 @@
 .teste{
     animation: fadeInRight 2s;
+<<<<<<< HEAD
     
+=======
+    padding: 10% !important;
+    margin-left: 1.5em;
+    border-radius: 10px/20px !important;
+>>>>>>> b0b6e2eb1ff17c45a8b9a97a0832f1793963fb30
 }
 
 @keyframes fadeInRight{
@@ -18,7 +24,17 @@
     font-weight: bold !important;
 }
 .back,.Signin {
+<<<<<<< HEAD
     background-color: #21A887 !important;
     text-decoration: none;
     color: black !important;
 }
+=======
+    background-color: #016646!important;
+    text-decoration: none;
+    color: black !important;
+}
+
+    
+
+>>>>>>> b0b6e2eb1ff17c45a8b9a97a0832f1793963fb30
