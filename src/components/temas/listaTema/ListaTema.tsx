@@ -76,7 +76,9 @@ function ListaTema() {
                       size="small"
                       color="primary"
                     >
-                      atualizar
+                    <Typography className="fonte">
+                  Atualizar
+                  </Typography>
                     </Button>
                   </Box>
                 </Link>
@@ -85,8 +87,10 @@ function ListaTema() {
                   className="text-decorator-none"
                 >
                   <Box mx={1}>
-                    <Button variant="contained" size="small" color="secondary">
-                      deletar
+                    <Button variant="contained" size="small" className="cor2">
+                    <Typography className="fonte">
+                  Deletar
+                  </Typography>
                     </Button>
                   </Box>
                 </Link>

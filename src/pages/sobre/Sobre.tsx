@@ -34,7 +34,7 @@ function Sobre() {
         justifyContent="center"
         alignItems="center"
       >
-        <h1>Sobre o Discoleta: </h1>;
+        <h1 className="textos2">Sobre o Discoleta: </h1>;
         <p>
           Discoleta é uma Rede Social que facilita o descarte do lixo
           reciclável, conectando pessoas que se disponibilizam para uma rede que
@@ -106,8 +106,10 @@ function Sobre() {
               />
 
               <Box marginTop={2} textAlign="center">
-                <Button type="submit" variant="contained">
+                <Button type="submit" variant="contained" className="cor">
+                <Typography className="fonte">
                   Enviar
+                  </Typography>
                 </Button>
               </Box>
             </form>

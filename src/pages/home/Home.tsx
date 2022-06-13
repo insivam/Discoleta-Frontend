@@ -29,44 +29,51 @@ function Home() {
     }
   }, [token]);
   return (
-    <>
+    <Grid container>
+      <Grid item sm={2}></Grid>
       <Grid
+        sm={8}
+        item
         container
         direction="row"
         justifyContent="center"
         alignItems="center"
         className="caixa"
       >
-        <Grid alignItems="center" item xs={6}>
-          <Box paddingX={20}>
-            <Typography
-              variant="h3"
-              gutterBottom
-              className="titulo font"
-              component="h3"
-              align="center"
-            >
-              Bem-vindo(a) ao Discoleta!
-            </Typography>
-          </Box>
-          <Box display="flex" justifyContent="center">
-            <Box marginRight={1}></Box>
-            <Button variant="outlined" className="botao">
-              Ver Postagens
-            </Button>
-          </Box>
-        </Grid>
-        <Grid item xs={6} className="back">
-          {/* <img
+        <div className="x">
+          <Grid alignItems="center" item xs={6}>
+            <Box paddingX={20}>
+              <Typography
+                variant="h3"
+                gutterBottom
+                className="titulo font"
+                component="h3"
+                align="center"
+              >
+                Bem-vindo(a) ao Discoleta!
+              </Typography>
+            </Box>
+            <Box display="flex" justifyContent="center">
+              <Box marginRight={1}></Box>
+              <Button variant="outlined" className="botao">
+                Ver Postagens
+              </Button>
+            </Box>
+          </Grid>
+
+          <Grid item xs={6} className="back">
+            {/* <img
             src="https://cdn.discordapp.com/attachments/961308831533637685/980836772365881395/DISCOLETA_-_LOGO.jpg"
             alt=""
             width="500px"
             height="250px"
           /> */}
-        </Grid>
+          </Grid>
+        </div>
+        <ListaPostagem />
       </Grid>
-      <ListaPostagem />
-    </>
+      <Grid item sm={2}></Grid>
+    </Grid>
   );
 }
 export default Home;

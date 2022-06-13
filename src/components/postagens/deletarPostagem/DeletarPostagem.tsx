@@ -94,9 +94,10 @@ function DeletarPostagem() {
                   variant="contained"
                   className="marginLeft"
                   size="large"
-                  color="primary"
                 >
+                  <Typography className="fonte">
                   Sim
+                  </Typography>
                 </Button>
               </Box>
               <Box>
@@ -104,9 +105,11 @@ function DeletarPostagem() {
                   onClick={nao}
                   variant="contained"
                   size="large"
-                  color="secondary"
+                  className="cor2"
                 >
+                   <Typography className="fonte">
                   Não
+                  </Typography>
                 </Button>
               </Box>
             </Box>

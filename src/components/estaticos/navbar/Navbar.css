@@ -1,6 +1,6 @@
 .link{
     text-decoration: none !important;
-    color: #000000 !important;
+    color: white !important;
     font-weight: bold !important;
 }
 .nav{
@@ -15,10 +15,15 @@
 }
 
 .logout{
-    color: red !important;
+    color: white !important;
 }
 
 .nome{
     font-weight: bold;
     text-align: center;
+    color: white !important;
+}
+
+.cor{
+    background-color: #056444 !important;
 }

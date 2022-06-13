@@ -21,8 +21,8 @@
 
 .cadastro{
     border-radius:  50% 50% 50% 50% / 50% 0% 0% 50% !important;
-    background-color: blue !important;
-    border-color: black !important;
+    background-color: #056444 !important;
+    border-color: #056444 !important;
     
 }
 .right{
@@ -32,4 +32,8 @@
 }
 .cadastro2{
     width: max-content !important;
+}
+
+.discoleta{
+    color: #056444 !important;
 }

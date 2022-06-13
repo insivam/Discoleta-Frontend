@@ -36,7 +36,7 @@ import "./Navbar.css";
 const useStyles = makeStyles((theme) => ({
   menuSliderContainer: {
     width: 250,
-    background: "#6ba3cb",
+    background: "#056444",
     height: "100%",
   },
   avatar: {
@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(13),
   },
   listItem: {
-    color: "tan",
+    color: "#7cb4a7",
   },
 }));
 
@@ -184,7 +184,7 @@ function Nav2() {
         <CssBaseline />
         <Box component="nav" position="fixed">
           <AppBar position="static">
-            <Toolbar>
+            <Toolbar className="cor">
               <IconButton onClick={toggleSlider}>
                 <Menu />
               </IconButton>

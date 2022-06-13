@@ -22,7 +22,11 @@
 .back,.Signin {
     background-color: #016646!important;
     text-decoration: none;
-    color: black !important;
+    color: white !important;
+}
+
+.cor5{
+    background-color: white !important;
 }
 
     

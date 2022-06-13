@@ -105,9 +105,9 @@ function Login() {
                 color="textPrimary"
                 component="h5"
                 align="center"
-                style={{ fontWeight: "bold" }}
+                style={{ fontWeight: "bold", color: "white"}}
               >
-                Entrar no Discoleta
+                Entrar no <span className="discoleta">Discoleta</span>
               </Typography>
               <TextField
                 value={userLogin.usuario}
@@ -118,6 +118,7 @@ function Login() {
                 name="usuario"
                 margin="normal"
                 fullWidth
+                className="cor5"
               />
 
               <TextField
@@ -130,6 +131,7 @@ function Login() {
                 margin="normal"
                 type="password"
                 fullWidth
+                className="cor5"
               />
               <Box marginTop={2} textAlign="center">
                 <Button
@@ -144,8 +146,8 @@ function Login() {
             </form>
             <Box display="flex" justifyContent="center" marginTop={2}>
               <Box marginRight={1}>
-                <Typography variant="subtitle1" gutterBottom align="center">
-                  Novo no Discoleta?
+                <Typography variant="subtitle1" gutterBottom align="center" className="fonte" >
+                   Novo no <span className="discoleta">Discoleta</span>?
                 </Typography>
               </Box>
               <Box>

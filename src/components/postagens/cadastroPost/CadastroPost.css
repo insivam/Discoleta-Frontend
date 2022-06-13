@@ -1,3 +1,12 @@
 .topo{
     margin-top: 20px;
 }   
+
+.cor{
+    background-color: white !important;
+}
+
+.TextField{
+    background-color: white !important;
+    border-radius: 20px;
+}

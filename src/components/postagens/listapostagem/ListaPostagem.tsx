@@ -62,11 +62,11 @@ function ListaPostagem() {
             <CardContent>
               <div className="a-direita">
                 <div>
-                  <Typography variant="h5" component="h2">
+                  <Typography variant="h5" component="h2" className="fonte2">
                     {post.titulo}
                   </Typography>
 
-                  <Typography variant="body2" component="p">
+                  <Typography variant="body2" component="p" className="fonte2">
                     {post.texto}
                   </Typography>
                 </div>
@@ -113,7 +113,9 @@ function ListaPostagem() {
                       size="small"
                       color="primary"
                     >
-                      atualizar
+                      <Typography className="fonte">
+                  Atualizar
+                  </Typography>
                     </Button>
                   </Box>
                 </Link>
@@ -122,8 +124,10 @@ function ListaPostagem() {
                   className="text-decorator-none"
                 >
                   <Box mx={1}>
-                    <Button variant="contained" size="small" color="secondary">
-                      deletar
+                    <Button variant="contained" size="small" color="secondary" className="botão">
+                    <Typography className="fonte">
+                  Deletar
+                  </Typography>
                     </Button>
                   </Box>
                 </Link>

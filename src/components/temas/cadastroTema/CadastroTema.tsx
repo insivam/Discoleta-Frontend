@@ -131,6 +131,7 @@ function CadastroTema() {
           color="textSecondary"
           component="h1"
           align="center"
+          className="fonte"
         >
           Formulário de cadastro tema
         </Typography>
@@ -143,6 +144,7 @@ function CadastroTema() {
           name="nome"
           margin="normal"
           fullWidth
+          className="TextField"
         />
         <TextField
           value={tema.descricao}
@@ -153,9 +155,12 @@ function CadastroTema() {
           name="descricao"
           margin="normal"
           fullWidth
+          className="TextField" 
         />
-        <Button type="submit" variant="contained" color="primary">
-          Finalizar
+        <Button type="submit" variant="contained" className="cor">
+          <Typography className="fonte">
+            Finalizar
+          </Typography>
         </Button>
       </form>
     </Container>

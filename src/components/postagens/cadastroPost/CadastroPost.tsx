@@ -143,6 +143,7 @@ function CadastroPost() {
           color="textSecondary"
           component="h1"
           align="center"
+          className="fonte"
         >
           Formulário de cadastro postagem
         </Typography>
@@ -155,6 +156,7 @@ function CadastroPost() {
           name="titulo"
           margin="normal"
           fullWidth
+          className="TextField"
         />
         <TextField
           value={postagem.texto}
@@ -165,6 +167,7 @@ function CadastroPost() {
           variant="outlined"
           margin="normal"
           fullWidth
+          className="TextField"
         />
 
         <TextField
@@ -176,6 +179,7 @@ function CadastroPost() {
           variant="outlined"
           margin="normal"
           fullWidth
+          className="TextField"
         />
 
         <TextField
@@ -187,6 +191,7 @@ function CadastroPost() {
           variant="outlined"
           margin="normal"
           fullWidth
+          className="TextField"
         />
 
         <FormControl>
@@ -207,8 +212,10 @@ function CadastroPost() {
             ))}
           </Select>
           <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-          <Button type="submit" variant="contained" color="primary">
-            Finalizar
+          <Button type="submit" variant="contained" className="cor">
+            <Typography className="fonte">
+              Finalizar
+            </Typography>
           </Button>
         </FormControl>
       </form>

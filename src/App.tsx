@@ -26,9 +26,9 @@ import Perfil from "./pages/perfil/Perfil";
 function App() {
   return (
     <Provider store={store}>
-      <ToastContainer />
+    <ToastContainer />
       <Router>
-        <Grid direction="column">
+        <Grid className="page" direction="column">
           <Grid sm={2}>
             <Nav2 />
           </Grid>
