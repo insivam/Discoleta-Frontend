@@ -93,98 +93,125 @@ function CadastroUsuario() {
     }
   }
   return (
-    <Grid container direction="row" justifyContent="center" alignItems="center">
-      <Grid xs={6} justifyContent="center" alignItems="center" className="back">
-        <div style={{ minHeight: "100vh" }}>
+    <Grid
+      container
+      direction="row"
+      justifyContent="center"
+      alignItems="flex-start"
+      style={{ minHeight: "100vh" }}
+      className="grid-main"
+    >
+      <Grid
+        xs={6}
+        justifyContent="flex-start"
+        alignItems="center"
+        className="background-grid-left-cadastro"
+      >
+        <Box className="posicao-logo">
           <img
             src="https://cdn.discordapp.com/attachments/961308831533637685/980836772365881395/DISCOLETA_-_LOGO.jpg"
-            alt=""
-            width="500px"
-            height="500px"
-            className="teste"
+            alt="logo discoleta"
+            width="45%"
+            height="45%"
+            className="animacao-logo"
           />
-        </div>
+        </Box>
+        <div className="traiagulo"></div>
       </Grid>
-      <Grid item xs={6} className="cadastro">
-        <Box paddingX={10} className="right">
-          <form onSubmit={onSubmit} className="right">
-            <Typography
-              variant="h3"
-              gutterBottom
-              color="textPrimary"
-              component="h3"
-              align="center"
-              className="textos2"
-            >
-              Cadastrar
-            </Typography>
-            <TextField
-              value={user.nome}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-              id="nome"
-              label="Nome"
-              variant="outlined"
-              name="nome"
-              margin="normal"
-              fullWidth
-            />
-            <TextField
-              value={user.usuario}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-              id="usuario"
-              label="Usuário"
-              variant="outlined"
-              name="usuario"
-              margin="normal"
-              type="email"
-              fullWidth
-            />
-            <TextField
-              value={user.foto}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-              id="foto"
-              label="Foto"
-              variant="outlined"
-              name="foto"
-              margin="normal"
-              fullWidth
-            />
-            <TextField
-              value={user.senha}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-              id="senha"
-              label="Senha"
-              variant="outlined"
-              name="senha"
-              margin="normal"
-              type="password"
-              className="cadastro2"
-            />
-            <TextField
-              value={confirmarSenha}
-              onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                confirmarSenhaHandle(e)
-              }
-              id="confirmarSenha"
-              label="Confirmar senha"
-              variant="outlined"
-              name="confirmarSenha"
-              margin="normal"
-              type="password"
-              fullWidth
-            />
+      <Grid
+        xs={6}
+        className="background-grid-right"
+        style={{ minHeight: "100vh" }}
+      >
+        <Box paddingY={5.8} paddingLeft={14} paddingRight={10}>
+          <Typography
+            variant="h5"
+            gutterBottom
+            component="h5"
+            align="center"
+            className="criar-conta"
+          >
+            Bem-vindo(a) ao <span className="discoleta">Discoleta</span>!
+          </Typography>
+          <form onSubmit={onSubmit}>
+            <div className="caixa-label">
+              <label>Nome</label>
+              <TextField
+                value={user.nome}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                id="nome"
+                variant="outlined"
+                name="nome"
+                margin="normal"
+                className="input"
+              />
+            </div>
+            <div className="caixa-label">
+              <label>Usuário</label>
+              <TextField
+                value={user.usuario}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                id="usuario"
+                variant="outlined"
+                name="usuario"
+                margin="normal"
+                type="email"
+                className="input"
+              />
+            </div>
+            <div className="caixa-label">
+              <label>Foto</label>
+              <TextField
+                value={user.foto}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                id="foto"
+                variant="outlined"
+                name="foto"
+                margin="normal"
+                className="input"
+              />
+            </div>
+            <div className="caixa-label">
+              <label>Senha</label>
+              <TextField
+                value={user.senha}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                id="senha"
+                className="input"
+                variant="outlined"
+                name="senha"
+                margin="normal"
+                type="password"
+              />
+            </div>
+            <div className="caixa-label">
+              <label>Confirmar senha</label>
+
+              <TextField
+                value={confirmarSenha}
+                onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                  confirmarSenhaHandle(e)
+                }
+                id="confirmarSenha"
+                variant="outlined"
+                name="confirmarSenha"
+                margin="normal"
+                type="password"
+                className="input"
+              />
+            </div>
             <Box marginTop={2} textAlign="center">
               <Link to="/login" className="text-decorator-none">
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  className="btnCancelar"
-                >
+                <Button variant="contained" className="btnCancelar">
                   Cancelar
                 </Button>
               </Link>
-              <Button type="submit" variant="contained" color="primary">
-                Cadastrar
+              <Button
+                type="submit"
+                variant="contained"
+                className="btnCadatre-se"
+              >
+                Cadastre-se
               </Button>
             </Box>
           </form>

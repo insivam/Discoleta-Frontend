@@ -25,10 +25,11 @@ import Perfil from "./pages/perfil/Perfil";
 
 function App() {
   return (
+    
     <Provider store={store}>
     <ToastContainer />
       <Router>
-        <Grid className="page" direction="column">
+        <Grid direction="column" >
           <Grid sm={2}>
             <Nav2 />
           </Grid>
@@ -42,8 +43,7 @@ function App() {
               <Route path="/posts" element={<ListaPostagem />} />
               <Route path="/formularioPostagem" element={<CadastroPost />} />
               <Route
-                path="/formularioPostagem/:id"
-                element={<CadastroPost />}
+                path="/formularioPostagem/:id" element={<CadastroPost />}
               />
               <Route
                 path="/deletarPostagem/:id"

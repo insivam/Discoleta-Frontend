@@ -1,39 +1,62 @@
-.imagem2{
-    background-image: url(https://i.imgur.com/d5bMdDJ.jpg);
-    background-repeat: no-repeat;
-    width: 100vh;
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center;
+.grid-main{
+    background-color: #056444;
+}
+.imagem2 {
+  background-image: url(https://i.imgur.com/d5bMdDJ.jpg);
+  background-repeat: no-repeat;
+  width: 100vh;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
 }
 
-.textos2{
-    font-weight: bold !important;
+.textos2 {
+  font-weight: bold !important;
 }
 
-.btnCancelar{
-    margin-right: 20px !important;
+.btnCancelar {
+  margin-right: 5% !important;
+  font-weight: bold !important;
+  color: white !important;
+  background-color: #056444 !important;
+  border-radius: 20px !important;
 }
-.back, .teste{
-    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50% !important;
-    animation: fadeInRight 2s;
+.btnCadatre-se {
+  font-weight: bold !important;
+  color: white !important;
+  background-color: #056444 !important;
+  border-radius: 20px !important;
 }
 
-.cadastro{
-    border-radius:  50% 50% 50% 50% / 50% 0% 0% 50% !important;
-    background-color: #056444 !important;
-    border-color: #056444 !important;
+.animacao-logo {
+  border-radius: 50% 50% 50% 50% / 50% 50% 50% 50% !important;
+  border: 1px solid white;
+  animation: fadeInRight 2s;
+
+}
+.posicao-logo {
     
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
 }
-.right{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-.cadastro2{
-    width: max-content !important;
+.background-grid-left-cadastro {
+  background-color: #056444;
+  padding-top: 0% !important;
 }
 
-.discoleta{
-    color: #056444 !important;
+.background-grid-right {
+  border-radius: 50% 50% 50% 50% / 50% 0% 0% 50% !important;
+  background-color: #151719 !important;
+}
+
+.discoleta {
+  color: #056444 !important;
+}
+.traiagulo {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width:22em 0 0 42em;
+    border-color: transparent transparent transparent #03422d;
 }

@@ -93,70 +93,88 @@ function Login() {
         container
         direction="row"
         justifyContent="center"
-        alignItems="center"
-        className="teste1"
+        alignItems="flex-end"
+        style={{ minHeight: "100vh" }}
+        className="grid-main"
       >
-        <Grid xs={6} alignItems="center" className="teste6">
-          <Box paddingX={20} paddingY={20}>
+        <Grid
+          xs={6}
+          alignItems="center"
+          justifyContent="flex-start"
+          className="background-grid-left"
+          style={{ minHeight: "100vh" }}
+        >
+          <Box paddingY={18.7} paddingX={20}>
+            <Typography
+              variant="h5"
+              gutterBottom
+              color="textPrimary"
+              component="h5"
+              align="center"
+              style={{ fontWeight: "bold", color: "white" }}
+            >
+              Entrar no <span className="discoleta">Discoleta</span>
+            </Typography>
             <form onSubmit={onSubmit}>
-              <Typography
-                variant="h5"
-                gutterBottom
-                color="textPrimary"
-                component="h5"
-                align="center"
-                style={{ fontWeight: "bold", color: "white"}}
-              >
-                Entrar no <span className="discoleta">Discoleta</span>
-              </Typography>
-              <TextField
-                value={userLogin.usuario}
-                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                id="usuario"
-                label="usuário"
-                variant="outlined"
-                name="usuario"
-                margin="normal"
-                fullWidth
-                className="cor5"
-              />
+              <div className="caixa-label">
+                <label>E-mail</label>
+                <TextField
+                  value={userLogin.usuario}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                    updatedModel(e)
+                  }
+                  id="usuario"
+                  name="usuario"
+                  margin="normal"
+                  className="input"
+                  variant="outlined"
+                />
+              </div>
+              <div className="caixa-label">
+                <label>Senha</label>
+                <TextField
+                  value={userLogin.senha}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                    updatedModel(e)
+                  }
+                  id="senha"
+                  variant="outlined"
+                  name="senha"
+                  margin="normal"
+                  type="password"
+                  className="input"
+                />
+              </div>
 
-              <TextField
-                value={userLogin.senha}
-                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                id="senha"
-                label="senha"
-                variant="outlined"
-                name="senha"
-                margin="normal"
-                type="password"
-                fullWidth
-                className="cor5"
-              />
               <Box marginTop={2} textAlign="center">
                 <Button
-                  className="Signin"
+                  className="button-entrar"
                   type="submit"
                   variant="contained"
-                  color="primary"
                 >
                   Entrar
                 </Button>
               </Box>
             </form>
+
             <Box display="flex" justifyContent="center" marginTop={2}>
               <Box marginRight={1}>
-                <Typography variant="subtitle1" gutterBottom align="center" className="fonte" >
-                   Novo no <span className="discoleta">Discoleta</span>?
+                <Typography
+                  variant="subtitle1"
+                  gutterBottom
+                  align="center"
+                  className="fonte"
+                >
+                  Novo no <span className="discoleta">Discoleta</span>?
                 </Typography>
               </Box>
               <Box>
-                <Link to="/cadastro" className="Signin">
+                <Link to="/cadastro" className="criar-conta">
                   <Typography
                     variant="subtitle1"
                     gutterBottom
                     align="center"
-                    style={{ fontWeight: "bold" }}
+                    className="criar-conta"
                   >
                     Criar uma conta
                   </Typography>
@@ -165,18 +183,22 @@ function Login() {
             </Box>
           </Box>
         </Grid>
-        <Grid xs={6} alignItems="center" className="back">
-          <div style={{ minHeight: "100vh" }} className="teste2">
-            <Box>
-              <img
-                src="https://cdn.discordapp.com/attachments/961308831533637685/980836772365881395/DISCOLETA_-_LOGO.jpg"
-                alt=""
-                width="500px"
-                height="500px"
-                className="teste"
-              />
-            </Box>
-          </div>
+        <Grid
+          xs={6}
+          justifyContent="flex-end"
+          alignItems="flex-end"
+          className="background-grid-left-cadastro"
+        >
+          <Box className="posicao-logo">
+            <img
+              src="https://cdn.discordapp.com/attachments/961308831533637685/980836772365881395/DISCOLETA_-_LOGO.jpg"
+              alt="logo discoleta"
+              width="45%"
+              height="45%"
+              className="animacao-logo"
+            />
+          </Box>
+          <div className="traiagulo-login"></div>
         </Grid>
       </Grid>
     </>
