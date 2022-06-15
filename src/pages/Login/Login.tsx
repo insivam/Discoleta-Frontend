@@ -1,3 +1,11 @@
+import { Box, Button, Grid, TextField, Typography } from "@material-ui/core";
+import React from "react";
+import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./Login.css";
+
+function Login() {
+import { Button, Grid, TextField, Typography } from "@material-ui/core";
 import React, { ChangeEvent, useState, useEffect } from "react";
 import { Button, Grid, TextField, Typography } from "@material-ui/core";
 import { Box } from "@mui/material";
@@ -96,6 +104,12 @@ function Login() {
         alignItems="flex-end"
         style={{ minHeight: "100vh" }}
         className="grid-main"
+        alignItems="center"
+      >
+        <Grid xs={6} alignItems="center">
+          <Box paddingX={20} paddingY={20}>
+            <form>
+        className="teste1"
       >
         <Grid
           xs={6}
@@ -146,7 +160,51 @@ function Login() {
                 />
               </div>
 
+              <Typography
+                variant="h5"
+                gutterBottom
+                color="textPrimary"
+                component="h5"
+                align="center"
+                style={{ fontWeight: "bold" }}
+              >
+                Sign in to Discoleta
+              </Typography>
+              <TextField
+                id="usuario"
+                label="E-mail"
+                Entrar no Discoleta
+              </Typography>
+              <TextField
+                value={userLogin.usuario}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                id="usuario"
+                label="usuário"
+                variant="outlined"
+                name="usuario"
+                margin="normal"
+                fullWidth
+              />
+              <TextField
+                id="senha"
+                label="Password"
+              <TextField
+                value={userLogin.senha}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                id="senha"
+                label="senha"
+                variant="outlined"
+                name="senha"
+                margin="normal"
+                type="password"
+                fullWidth
+              />
               <Box marginTop={2} textAlign="center">
+                <Link to="/home" className="Signin">
+                  <Button className="Signin" type="submit" variant="contained" color="primary">
+                    Sign in
+                  </Button>
+                </Link>
                 <Button
                   className="button-entrar"
                   type="submit"
@@ -166,6 +224,23 @@ function Login() {
                   className="fonte"
                 >
                   Novo no <span className="discoleta">Discoleta</span>?
+                <Typography variant="subtitle1" gutterBottom align="center">
+                New to Discoleta?
+                </Typography>
+              </Box>
+              <Box>
+              <Link to="/cadastro" className="Signin">
+              <Typography
+                variant="subtitle1"
+                gutterBottom
+                align="center"
+                style={{ fontWeight: "bold" }}
+              >
+                Create an account
+              </Typography>
+              </Link>
+
+                  Novo no Discoleta?
                 </Typography>
               </Box>
               <Box>
@@ -199,10 +274,33 @@ function Login() {
             />
           </Box>
           <div className="traiagulo-login"></div>
+        <Grid xs={6} alignItems="center" className="back" >
+        <div style={{ minHeight: "100vh" }}>
+            <h1 className="teste">
+                TESTE
+            </h1>
+
+        </div>
+       
+        </Grid>
+       
+        <Grid xs={6} alignItems="center" className="back">
+          <div style={{ minHeight: "100vh" }} className="teste2">
+            <Box>
+              <img
+                src="https://cdn.discordapp.com/attachments/961308831533637685/980836772365881395/DISCOLETA_-_LOGO.jpg"
+                alt=""
+                width="500px"
+                height="500px"
+                className="teste"
+              />
+            </Box>
+          </div>
         </Grid>
       </Grid>
     </>
   );
 }
 
+export default Login;
 export default Login;

@@ -2,6 +2,14 @@
   text-decoration: none !important;
   color: white !important;
   font-weight: bold !important;
+.link{
+    text-decoration: none;
+}
+.nav{
+    color: white !important;
+    text-decoration: none !important;
+    color: #000000 !important;
+    font-weight: bold !important;
 }
 .nav {
   color: white !important;
@@ -25,4 +33,13 @@
 
 .cor {
   background-color: #03422d !important;
+}
+.logout{
+    color: red !important;
+
+}
+
+.nome{
+    font-weight: bold;
+    text-align: center;
 }

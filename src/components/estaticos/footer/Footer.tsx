@@ -5,6 +5,12 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import React from "react";
 import "./Footer.css";
+<<<<<<< HEAD
+
+function Footer() {
+  return (
+    <>
+=======
 import { useSelector } from "react-redux";
 import { UserState } from "../../../store/tokens/userReducer";
 
@@ -17,6 +23,7 @@ function Footer() {
 
   if (token !== "") {
     footerComponent = (
+>>>>>>> b0b6e2eb1ff17c45a8b9a97a0832f1793963fb30
       <Grid
         container
         direction="row"
@@ -85,6 +92,17 @@ function Footer() {
                   width="70"
                 />
               </a>
+<<<<<<< HEAD
+              <a href="https://github.com/willjpg">
+                <img
+                  src="https://i.imgur.com/dSnD5bF.png"
+                  alt="Willian"
+                  height="60"
+                  width="60"
+                />
+              </a>
+=======
+>>>>>>> b0b6e2eb1ff17c45a8b9a97a0832f1793963fb30
             </Box>
           </Box>
           <Box className="box2">
@@ -99,12 +117,16 @@ function Footer() {
               </Typography>
             </Box>
             <Box>
+<<<<<<< HEAD
+              <a target="_blank" href="https://github.com/Discoleta">
+=======
               <a
                 target="_blank"
                 rel="noreferrer"
                 href="https://github.com/Discoleta"
                 className="eme"
               >
+>>>>>>> b0b6e2eb1ff17c45a8b9a97a0832f1793963fb30
                 <Typography
                   variant="subtitle2"
                   gutterBottom
@@ -118,9 +140,17 @@ function Footer() {
           </Box>
         </Grid>
       </Grid>
+<<<<<<< HEAD
+    </>
+  );
+}
+
+export default Footer;
+=======
     );
   }
   return <>{footerComponent}</>;
 }
 
 export default Footer;
+>>>>>>> b0b6e2eb1ff17c45a8b9a97a0832f1793963fb30

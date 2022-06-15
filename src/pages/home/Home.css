@@ -19,6 +19,13 @@
 .caixa {
   background-color: #398c60 !important;
   border-radius: 20px;
+
+.botao{
+    border-color: green !important ;
+    background-color: #21A887 ;
+    color: rgb(157, 233, 157) !important;
+    font-weight: bold !important;
+}
 }
 
 .titulo {
