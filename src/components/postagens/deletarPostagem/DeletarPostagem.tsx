@@ -53,7 +53,7 @@ function DeletarPostagem() {
   }
 
   function sim() {
-    navigate("/posts");
+    navigate("/home");
     deleteId(`/postagens/${id}`, {
       headers: {
         Authorization: token,
@@ -71,7 +71,7 @@ function DeletarPostagem() {
   }
 
   function nao() {
-    navigate("/posts");
+    navigate("/home");
   }
 
   return (
