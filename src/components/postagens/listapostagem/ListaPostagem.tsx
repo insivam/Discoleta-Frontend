@@ -14,11 +14,11 @@ import {
 } from "@material-ui/core";
 import "./ListaPostagem.css";
 import { useNavigate } from "react-router-dom";
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { useSelector } from "react-redux";
 import { UserState } from "../../../store/tokens/userReducer";
 import { toast } from "react-toastify";
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([]);
@@ -61,43 +61,27 @@ function ListaPostagem() {
   return (
     <>
       {posts.map((post) => (
-        <Box m={2} flexDirection="row" >
-          <Card  className="caixa-card-home"  >
-          <CardHeader
-        avatar={
-          <Avatar>
-            R
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title= {post.titulo}
-        subheader= {Intl.DateTimeFormat("pt-BR").format(Date.parse(post.data))}
-      />
+        <Box m={2} flexDirection="row">
+          <Card variant="outlined" className="caixa-lista">
             <CardContent>
-              <Box className="a-direita" >
-                <div>
-                  <Typography variant="h5" component="h2" className="fonte2">
-                    {post.titulo}
-                  </Typography>
+              <div>
+                <Typography variant="h5" component="h2">
+                  {post.titulo}
+                </Typography>
 
-                  <Typography variant="body2" component="p" className="fonte2">
-                    {post.texto}
-                  </Typography>
-                </div>
-                <div>
-                  <Typography variant="h6" component="p">
-                    {post.tema?.nome}
-                  </Typography>
-                  <Typography align="right" variant="body2" component="p">
-                    {/* formata a data para pt-BR e escreve as iniciais */}
-                    {Intl.DateTimeFormat("pt-BR").format(Date.parse(post.data))}
-                  </Typography>
-                </div>
-              </Box>
+                <Typography variant="body2" component="p">
+                  {post.texto}
+                </Typography>
+              </div>
+              <div>
+                <Typography variant="h6" component="p">
+                  {post.tema?.nome}
+                </Typography>
+                <Typography align="right" variant="body2" component="p">
+                  {/* formata a data para pt-BR e escreve as iniciais */}
+                  {Intl.DateTimeFormat("pt-BR").format(Date.parse(post.data))}
+                </Typography>
+              </div>
 
               <div className="div-imagem">
                 {
@@ -118,7 +102,7 @@ function ListaPostagem() {
                 {post.bairro}
               </Typography>
             </CardContent>
-            <CardActions>
+            <CardActions className="a-direita">
               <Box display="flex" justifyContent="center" mb={1.5}>
                 <Link
                   to={`/formularioPostagem/${post.id}`}
@@ -127,13 +111,11 @@ function ListaPostagem() {
                   <Box mx={1}>
                     <Button
                       variant="contained"
-                      className="marginLeft"
+                      className="button-entrar"
                       size="small"
                       color="primary"
                     >
-                      <Typography className="fonte">
-                  Atualizar
-                  </Typography>
+                      Editar
                     </Button>
                   </Box>
                 </Link>
@@ -142,10 +124,13 @@ function ListaPostagem() {
                   className="text-decorator-none"
                 >
                   <Box mx={1}>
-                    <Button variant="contained" size="small" color="secondary" className="botão">
-                    <Typography className="fonte">
-                  Deletar
-                  </Typography>
+                    <Button
+                      variant="contained"
+                      size="small"
+                      color="secondary"
+                      className="button-deletar"
+                    >
+                      deletar
                     </Button>
                   </Box>
                 </Link>

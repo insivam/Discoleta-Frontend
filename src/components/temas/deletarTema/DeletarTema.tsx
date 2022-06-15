@@ -13,7 +13,7 @@ import { useSelector } from "react-redux";
 import { UserState } from "../../../store/tokens/userReducer";
 import Tema from "../../../models/Tema";
 import { toast } from "react-toastify";
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 
 function DeletarTema() {
   let navigate = useNavigate();
@@ -78,9 +78,18 @@ function DeletarTema() {
   }
 
   return (
-    <>
+    <Grid container className="grid-master-deletar">
+      <Grid item sm={2}></Grid>
+      <Grid
+        sm={8}
+        item
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+      >
       <Box m={2}>
-        <Card variant="outlined">
+        <Card variant="outlined" className="tio">
           <CardContent>
             <Box justifyContent="center">
               <Typography color="textSecondary" gutterBottom>
@@ -95,7 +104,7 @@ function DeletarTema() {
                 <Button
                   onClick={sim}
                   variant="contained"
-                  className="marginLeft"
+                  className="button-entrar"
                   size="large"
                   color="primary"
                 >
@@ -108,6 +117,7 @@ function DeletarTema() {
                   variant="contained"
                   size="large"
                   color="secondary"
+                  className="button-deletar"
                 >
                   Não
                 </Button>
@@ -116,7 +126,9 @@ function DeletarTema() {
           </CardActions>
         </Card>
       </Box>
-    </>
+      </Grid>
+      <Grid item sm={2}></Grid>
+    </Grid>
   );
 }
 export default DeletarTema;

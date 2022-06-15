@@ -33,16 +33,19 @@ function Sobre() {
         direction="row"
         justifyContent="center"
         alignItems="center"
+        className="form"
       >
-        <h1 className="textos2">Sobre o Discoleta: </h1>;
-        <p>
-          Discoleta é uma Rede Social que facilita o descarte do lixo
-          reciclável, conectando pessoas que se disponibilizam para uma rede que
-          não tem fácil acesso a um ecoponto. Esse projeto foi baseado na ODS 11
-          - Cidades e Comunidades Sustentáveis (ONU). Pessoas maiores de 13 anos
-          podem criar uma conta registrando um endereço de e-mail e nome de
-          usuário.
-        </p>
+        <Grid sm={4}>
+          <h1 className="sobre-meio">Sobre o Discoleta: </h1>
+          <p className="sobre-texto-meio">
+            Discoleta é uma Rede Social que facilita o descarte do lixo
+            reciclável, conectando pessoas que se disponibilizam para uma rede
+            que não tem fácil acesso a um ecoponto. Esse projeto foi baseado na
+            ODS 11 - Cidades e Comunidades Sustentáveis (ONU). Pessoas maiores
+            de 13 anos podem criar uma conta registrando um endereço de e-mail e
+            nome de usuário.
+          </p>
+        </Grid>
       </Grid>
 
       <Grid
@@ -61,6 +64,7 @@ function Sobre() {
                 component="h4"
                 align="center"
                 className="textos1"
+                
               >
                 <Typography
                   variant="h4"
@@ -80,6 +84,7 @@ function Sobre() {
                 name="nome"
                 margin="normal"
                 placeholder="Digite seu nome"
+                className="TextField"
               />
               <TextField
                 id="email"
@@ -88,6 +93,7 @@ function Sobre() {
                 name="email"
                 margin="normal"
                 placeholder="Digite seu e-mail"
+                className="TextField"
               />
               <TextField
                 id="assunto"
@@ -95,21 +101,21 @@ function Sobre() {
                 variant="outlined"
                 name="assunto"
                 margin="normal"
-                placeholder="Digite o assunto da mensagen"
+                placeholder="Digite o assunto da mensagem"
+                className="TextField"
               />
               <textarea
                 name="mensagem"
-                placeholder="Digite sua mensagem!"
+                placeholder="   Digite sua mensagem!"
                 id="mensagem"
+                className="TextField"
                 cols={50}
                 rows={10}
               />
 
               <Box marginTop={2} textAlign="center">
                 <Button type="submit" variant="contained" className="cor">
-                <Typography className="fonte">
-                  Enviar
-                  </Typography>
+                  <Typography className="fonte">Enviar</Typography>
                 </Button>
               </Box>
             </form>

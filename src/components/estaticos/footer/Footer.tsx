@@ -103,14 +103,15 @@ function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 href="https://github.com/Discoleta"
+                className="eme"
               >
                 <Typography
                   variant="subtitle2"
                   gutterBottom
                   align="center"
                   className="textos"
-                >
-                  brasil.generation.org
+                  >
+                  Discoleta
                 </Typography>
               </a>
             </Box>

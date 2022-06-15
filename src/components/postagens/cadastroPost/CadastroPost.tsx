@@ -9,6 +9,7 @@ import {
   MenuItem,
   FormControl,
   FormHelperText,
+  Grid,
 } from "@material-ui/core";
 import "./CadastroPost.css";
 import { useNavigate, useParams } from "react-router-dom";
@@ -133,9 +134,10 @@ function CadastroPost() {
   }
 
   function back() {
-    history("/posts");
+    history("/home");
   }
   return (
+    <Grid container direction="row" justifyContent="center" alignItems="center" className="fundoCP">
     <Container maxWidth="sm" className="topo">
       <form onSubmit={onSubmit}>
         <Typography
@@ -144,9 +146,11 @@ function CadastroPost() {
           component="h1"
           align="center"
           className="fonte"
-        >
-          Formulário de cadastro postagem
+          
+        >Formulário de cadastro postagem
+          
         </Typography>
+        
         <TextField
           value={postagem.titulo}
           onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
@@ -186,7 +190,7 @@ function CadastroPost() {
           value={postagem.bairro}
           onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
           id="bairro"
-          label="Bairro *"
+          label="Bairro *" 
           name="bairro"
           variant="outlined"
           margin="normal"
@@ -208,11 +212,13 @@ function CadastroPost() {
             }
           >
             {temas.map((tema) => (
-              <MenuItem value={tema.id}>{tema.descricao}</MenuItem>
+              <MenuItem value={tema.id}>{tema.nome}</MenuItem>
             ))}
           </Select>
           <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-          <Button type="submit" variant="contained" className="cor">
+          <Button type="submit" 
+          variant="contained" 
+          className="cor">
             <Typography className="fonte">
               Finalizar
             </Typography>
@@ -220,6 +226,7 @@ function CadastroPost() {
         </FormControl>
       </form>
     </Container>
+        </Grid>
   );
 }
 export default CadastroPost;

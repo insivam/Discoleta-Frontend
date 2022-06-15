@@ -13,7 +13,7 @@ import "./ListaTema.css";
 import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
 import { UserState } from "../../../store/tokens/userReducer";
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 
 function ListaTema() {
   const [temas, setTemas] = useState<Tema[]>([]);
@@ -51,55 +51,62 @@ function ListaTema() {
   }, [temas.length]);
 
   return (
-    <>
-      {temas.map((tema) => (
-        <Box m={2}>
-          <Card variant="outlined">
-            <CardContent>
-              <Typography color="textSecondary" gutterBottom>
-                Tema
-              </Typography>
-              <Typography variant="h5" component="h2">
-                {tema.descricao}
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <Box display="flex" justifyContent="center" mb={1.5}>
-                <Link
-                  to={`/formularioTema/${tema.id}`}
-                  className="text-decorator-none"
-                >
-                  <Box mx={1}>
-                    <Button
-                      variant="contained"
-                      className="marginLeft"
-                      size="small"
-                      color="primary"
-                    >
-                    <Typography className="fonte">
-                  Atualizar
-                  </Typography>
-                    </Button>
-                  </Box>
-                </Link>
-                <Link
-                  to={`/deletarTema/${tema.id}`}
-                  className="text-decorator-none"
-                >
-                  <Box mx={1}>
-                    <Button variant="contained" size="small" className="cor2">
-                    <Typography className="fonte">
-                  Deletar
-                  </Typography>
-                    </Button>
-                  </Box>
-                </Link>
-              </Box>
-            </CardActions>
-          </Card>
-        </Box>
-      ))}
-    </>
+    <Grid container className="grid-master-home">
+      <Grid item sm={2}></Grid>
+      <Grid
+        sm={8}
+        item
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+      >
+        {temas.map((tema) => (
+          <Box m={2}>
+            <Card variant="outlined" className="tio">
+              <CardContent>
+                <Typography color="textSecondary" gutterBottom>
+                  {tema.nome}
+                </Typography>
+                <Typography variant="h5" component="h2">
+                  {tema.descricao}
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Box display="flex" justifyContent="center" mb={1.5}>
+                  <Link
+                    to={`/formularioTema/${tema.id}`}
+                    className="text-decorator-none"
+                  >
+                    <Box mx={1}>
+                      <Button
+                        variant="contained"
+                        className="button-entrar"
+                        size="small"
+                        color="primary"
+                      >
+                        <Typography className="fonte">Editar</Typography>
+                      </Button>
+                    </Box>
+                  </Link>
+                  <Link
+                    to={`/deletarTema/${tema.id}`}
+                    className="text-decorator-none"
+                  >
+                    <Box mx={1}>
+                      <Button variant="contained" size="small" className="button-deletar">
+                        <Typography className="fonte">Deletar</Typography>
+                      </Button>
+                    </Box>
+                  </Link>
+                </Box>
+              </CardActions>
+            </Card>
+          </Box>
+        ))}
+      </Grid>
+      <Grid item sm={2}></Grid>
+    </Grid>
   );
 }
 

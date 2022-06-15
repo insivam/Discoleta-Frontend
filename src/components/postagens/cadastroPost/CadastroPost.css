@@ -3,10 +3,20 @@
 }   
 
 .cor{
-    background-color: white !important;
+    background-color: #398c60 !important;
+    
 }
 
 .TextField{
-    background-color: white !important;
+    background-color: #03422d !important;
     border-radius: 20px;
+
 }
+
+.fundoCP{
+    background-color: #056444;
+}
+
+
+
+

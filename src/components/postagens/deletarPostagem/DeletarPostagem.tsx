@@ -10,7 +10,7 @@ import "./DeletarPostagem.css";
 import { useNavigate, useParams } from "react-router-dom";
 import Postagem from "../../../models/Postagem";
 import { buscaId, deleteId } from "../../../services/Service";
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { useSelector } from "react-redux";
 import { UserState } from "../../../store/tokens/userReducer";
 import { toast } from "react-toastify";
@@ -75,48 +75,55 @@ function DeletarPostagem() {
   }
 
   return (
-    <>
-      <Box m={2}>
-        <Card variant="outlined">
-          <CardContent>
-            <Box justifyContent="center">
-              <Typography color="textSecondary" gutterBottom>
-                Deseja deletar a Postagem:
-              </Typography>
-              <Typography color="textSecondary">{post?.titulo}</Typography>
-            </Box>
-          </CardContent>
-          <CardActions>
-            <Box display="flex" justifyContent="start" ml={1.0} mb={2}>
-              <Box mx={2}>
-                <Button
-                  onClick={sim}
-                  variant="contained"
-                  className="marginLeft"
-                  size="large"
-                >
-                  <Typography className="fonte">
-                  Sim
-                  </Typography>
-                </Button>
+    <Grid container className="grid-master-postagem">
+      <Grid item sm={2}></Grid>
+      <Grid
+        sm={8}
+        item
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Box m={2}>
+          <Card variant="outlined" className="tio">
+            <CardContent>
+              <Box justifyContent="center">
+                <Typography color="textSecondary" gutterBottom>
+                  Deseja deletar a Postagem:
+                </Typography>
+                <Typography color="textSecondary">{post?.titulo}</Typography>
               </Box>
-              <Box>
-                <Button
-                  onClick={nao}
-                  variant="contained"
-                  size="large"
-                  className="cor2"
-                >
-                   <Typography className="fonte">
-                  Não
-                  </Typography>
-                </Button>
+            </CardContent>
+            <CardActions>
+              <Box display="flex" justifyContent="start" ml={1.0} mb={2}>
+                <Box mx={2}>
+                  <Button
+                    onClick={sim}
+                    variant="contained"
+                    className="button-entrar"
+                    size="large"
+                  >
+                    <Typography className="fonte">Sim</Typography>
+                  </Button>
+                </Box>
+                <Box>
+                  <Button
+                    onClick={nao}
+                    variant="contained"
+                    size="large"
+                    className="button-deletar"
+                  >
+                    <Typography className="fonte">Não</Typography>
+                  </Button>
+                </Box>
               </Box>
-            </Box>
-          </CardActions>
-        </Card>
-      </Box>
-    </>
+            </CardActions>
+          </Card>
+        </Box>
+      </Grid>
+      <Grid item sm={2}></Grid>
+    </Grid>
   );
 }
 export default DeletarPostagem;

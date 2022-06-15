@@ -1,3 +1,15 @@
 .text-decorator-none{
     text-decoration: none;
 }
+.tio{
+    width: 500px ;
+    max-width: 100%;
+    border-radius: 20px !important;
+}
+.button-deletar{
+    background-color: red!important;
+    text-decoration: none;
+    border-radius: 20px !important; 
+    color: white !important;
+    font-weight: bold !important;
+}

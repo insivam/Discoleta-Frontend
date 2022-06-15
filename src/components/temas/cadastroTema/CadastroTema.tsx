@@ -139,7 +139,7 @@ function CadastroTema() {
           value={tema.nome}
           onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)}
           id="nome"
-          label="nome"
+          label="Nome *"
           variant="outlined"
           name="nome"
           margin="normal"
@@ -150,7 +150,7 @@ function CadastroTema() {
           value={tema.descricao}
           onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)}
           id="descricao"
-          label="descricao"
+          label="Descrição *"
           variant="outlined"
           name="descricao"
           margin="normal"

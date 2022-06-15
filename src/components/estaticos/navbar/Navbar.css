@@ -1,29 +1,28 @@
-.link{
-    text-decoration: none !important;
-    color: white !important;
-    font-weight: bold !important;
+.link {
+  text-decoration: none !important;
+  color: white !important;
+  font-weight: bold !important;
 }
-.nav{
-    color: white !important;
-}
-
-.meudeus{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
+.nav {
+  color: white !important;
 }
 
-.logout{
-    color: white !important;
+.meudeus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.nome{
-    font-weight: bold;
-    text-align: center;
-    color: white !important;
+.logout {
+  color: white !important;
 }
 
-.cor{
-    background-color: #056444 !important;
+.nome {
+  font-weight: bold;
+  text-align: center;
+  color: white !important;
+}
+
+.cor {
+  background-color: #03422d !important;
 }

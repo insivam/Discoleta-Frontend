@@ -44,30 +44,24 @@ function Home() {
           <Grid alignItems="center" justifyContent="flex-start" item>
             <Box className="container">
               <div className="caixa-discoleta-head">
-              <Typography
-                variant="h4"
-                gutterBottom
-                className="fonte-home"
-                component="h5"
-                align="center"
-                
-              >
-                Bem-vindo(a) ao <span className="discoleta">Discoleta</span>!
-              </Typography>
+                <Typography
+                  variant="h3"
+                  gutterBottom
+                  className="fonte-home"
+                  component="h3"
+                  align="center"
+                >
+                  Bem-vindo(a) ao <span className="discoleta">Discoleta</span>!
+                </Typography>
               </div>
               <div className="col">
-                <p>Item 3</p>
+                <img
+                  src="https://media.discordapp.net/attachments/961308831533637685/986630887905034250/disco-1.png"
+                  alt="Exemplo Discoleta"
+                  className="img-home"
+                />
               </div>
             </Box>
-          </Grid>
-
-          <Grid item xs={6} className="back">
-            {/* <img
-            src="https://cdn.discordapp.com/attachments/961308831533637685/980836772365881395/DISCOLETA_-_LOGO.jpg"
-            alt=""
-            width="500px"
-            height="250px"
-          /> */}
           </Grid>
         </div>
         <ListaPostagem />
