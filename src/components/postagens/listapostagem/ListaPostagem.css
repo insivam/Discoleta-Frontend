@@ -2,14 +2,20 @@
     text-decoration: none;
 }
 
-.caixa{
-    width: 100%;
-    height: 100%;
-    background-color: #25282C !important;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px #056444;
-    padding: 10px;
-    margin-bottom: 10px;
+.caixa-card-home{
+    align-self: center;
+    background-color: l#717D86;
+    display: flex;
+    justify-content: center;
+    height: 300px !important;
+    margin: 1%;
+    width: auto;
+    max-width: 100rem;
+    
+    
+    border-radius: 15px !important;
+    box-shadow: 0px 0px 10px #9CA9B3;
+    
 }
 
 .foto-post{
@@ -21,7 +27,8 @@
     display: flex;
     flex-direction: row;
     /* put each in one side */
-    justify-content: space-between;
+   
+    
 }
 
 .div-imagem{

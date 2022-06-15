@@ -8,6 +8,9 @@ import {
   CardContent,
   Button,
   Typography,
+  CardHeader,
+  Avatar,
+  IconButton,
 } from "@material-ui/core";
 import "./ListaPostagem.css";
 import { useNavigate } from "react-router-dom";
@@ -15,6 +18,7 @@ import { Box } from "@mui/material";
 import { useSelector } from "react-redux";
 import { UserState } from "../../../store/tokens/userReducer";
 import { toast } from "react-toastify";
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([]);
@@ -57,10 +61,24 @@ function ListaPostagem() {
   return (
     <>
       {posts.map((post) => (
-        <Box m={2} flexDirection="row">
-          <Card variant="outlined" className="caixa">
+        <Box m={2} flexDirection="row" >
+          <Card  className="caixa-card-home"  >
+          <CardHeader
+        avatar={
+          <Avatar>
+            R
+          </Avatar>
+        }
+        action={
+          <IconButton aria-label="settings">
+            <MoreVertIcon />
+          </IconButton>
+        }
+        title= {post.titulo}
+        subheader= {Intl.DateTimeFormat("pt-BR").format(Date.parse(post.data))}
+      />
             <CardContent>
-              <div className="a-direita">
+              <Box className="a-direita" >
                 <div>
                   <Typography variant="h5" component="h2" className="fonte2">
                     {post.titulo}
@@ -79,7 +97,7 @@ function ListaPostagem() {
                     {Intl.DateTimeFormat("pt-BR").format(Date.parse(post.data))}
                   </Typography>
                 </div>
-              </div>
+              </Box>
 
               <div className="div-imagem">
                 {

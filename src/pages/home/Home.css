@@ -1,16 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap');
 
-.font{
+.head-home{
+  border-bottom: 1px solid #9CA9B3;  
+}
+.fonte-home{
     font-family: 'Anton', serif !important;
     color: azure !important;
-    margin-top: 140px !important;
-    margin-bottom: 30px !important;
-    
 }
-
+.caixa-discoleta-head{
+    align-self: center;
+    width: 300px;
+}
 .caixa{
-    background-color: #21A887
+    background-color: #21A887 !important
     ;
 }
 
@@ -18,13 +21,32 @@
     color: black ;
     font-weight: bold !important;
 }
-
-.botao{
-    border-color: green !important ;
-    background-color: #21A887 ;
-    color: rgb(157, 233, 157) !important;
+.caixa-ver-postagens{
+    padding-bottom: 5% !important;
+}
+.botao-ver-postagens{
+    border-radius: 20px !important;
+    border-color: white !important ;
+    background-color: #03422d !important;
+    color: white !important;
     font-weight: bold !important;
 }
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
 
+  .col {
+    align-self: center;
+    background-color: #398c60;
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    margin: 10px;
+    width: 550px;
+    border-radius: 20px;
+    
+  }
 
 

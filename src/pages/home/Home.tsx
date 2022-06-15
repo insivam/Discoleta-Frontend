@@ -29,7 +29,7 @@ function Home() {
     }
   }, [token]);
   return (
-    <Grid container>
+    <Grid container className="grid-master-home">
       <Grid item sm={2}></Grid>
       <Grid
         sm={8}
@@ -40,24 +40,24 @@ function Home() {
         alignItems="center"
         className="caixa"
       >
-        <div className="x">
-          <Grid alignItems="center" item xs={6}>
-            <Box paddingX={20}>
+        <div className="head-home">
+          <Grid alignItems="center" justifyContent="flex-start" item>
+            <Box className="container">
+              <div className="caixa-discoleta-head">
               <Typography
-                variant="h3"
+                variant="h4"
                 gutterBottom
-                className="titulo font"
-                component="h3"
+                className="fonte-home"
+                component="h5"
                 align="center"
+                
               >
-                Bem-vindo(a) ao Discoleta!
+                Bem-vindo(a) ao <span className="discoleta">Discoleta</span>!
               </Typography>
-            </Box>
-            <Box display="flex" justifyContent="center">
-              <Box marginRight={1}></Box>
-              <Button variant="outlined" className="botao">
-                Ver Postagens
-              </Button>
+              </div>
+              <div className="col">
+                <p>Item 3</p>
+              </div>
             </Box>
           </Grid>
 
