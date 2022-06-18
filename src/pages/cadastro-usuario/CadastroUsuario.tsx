@@ -16,7 +16,7 @@ function CadastroUsuario() {
     nome: "",
     usuario: "",
     senha: "",
-    foto: "https://i.imgur.com/0W0fPCC.png",
+    foto: "",
   });
 
   const [userResult, setUserResult] = useState<User>({
@@ -61,12 +61,9 @@ function CadastroUsuario() {
 
         //Caso tenha algo diferente do padrão solicitado ele mostra mensagem de erro
       } catch (error) {
-        console.log(`Error: ${error}`);
-
-        //Mensagem personalizada de acordo com o erro
-        toast.error(
-          "Dados inconsistentes. Favor verificar as informações de cadastro.",
-          {
+        if (user.nome.length === 0 || user.usuario.length === 0) {
+          //Mensagem personalizada de acordo com o erro
+          toast.error("Campo em branco, preencha todos os campos!", {
             position: "top-right",
             autoClose: 1400,
             hideProgressBar: false,
@@ -74,22 +71,31 @@ function CadastroUsuario() {
             pauseOnHover: false,
             draggable: false,
             progress: undefined,
-          }
-        );
+          });
+        }
       }
     } else {
-      toast.error("Insira no miníno 8 caracteres na senha.", {
-        position: "top-right",
-        autoClose: 1400,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        progress: undefined,
-      });
-
-      setUser({ ...user, senha: "" }); // Reinicia o campo de Senha
-      setConfirmarSenha(""); // Reinicia o campo de Confirmar Senha
+      if (user.senha.length <= 8) {
+        toast.error("Insira no miníno 8 caracteres na senha.", {
+          position: "top-right",
+          autoClose: 1400,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+        });
+      } else if (confirmarSenha !== user.senha) {
+        toast.error("Senhas não conferem.", {
+          position: "top-right",
+          autoClose: 1400,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+        });
+      }
     }
   }
   return (
@@ -147,7 +153,7 @@ function CadastroUsuario() {
               />
             </div>
             <div className="caixa-label">
-              <label>Usuário</label>
+              <label>E-mail</label>
               <TextField
                 value={user.usuario}
                 onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}

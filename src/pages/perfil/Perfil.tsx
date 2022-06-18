@@ -66,35 +66,47 @@ function Perfil() {
   }, [id]);
 
   return (
-    <>
-      <Box component="div" className="nome">
-        <Avatar
-          className={classes.avatar}
-          src={user.foto}
-          alt="Foto de perfil"
-        />
-        <Typography variant="h5">{user.nome}</Typography>
+    <Grid container className="grid-master-home">
+      <Grid item sm={2}></Grid>
+      <Grid
+        sm={8}
+        item
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+        className="caixa"
+      >
+        <Box component="div" className="nome">
+          <Avatar
+            className={classes.avatar}
+            src={user.foto}
+            alt="Foto de perfil"
+          />
+          <Typography variant="h5">{user.nome}</Typography>
+          <Divider />
+          <List className="nome">
+            <Typography align="center">{user.usuario}</Typography>
+          </List>
+        </Box>
         <Divider />
-        <List className="nome">
-          <Typography>{user.usuario}</Typography>
-        </List>
-      </Box>
-      <Divider />
-      <Grid container marginTop={3} marginBottom={4}>
-        <Grid item sm={2}></Grid>
-        <Grid
-          sm={8}
-          item
-          container
-          direction="row"
-          justifyContent="center"
-          alignItems="center"
-          className="caixa"
-        >
-          <ListaPostagem />
+        <Grid container marginTop={3} marginBottom={4}>
+          <Grid item sm={2}></Grid>
+          <Grid
+            sm={8}
+            item
+            container
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+            className="caixa"
+          >
+            <ListaPostagem />
+          </Grid>
         </Grid>
       </Grid>
-    </>
+      <Grid item sm={2}></Grid>
+    </Grid>
   );
 }
 export default Perfil;

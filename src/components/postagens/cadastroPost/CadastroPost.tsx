@@ -137,96 +137,91 @@ function CadastroPost() {
     history("/home");
   }
   return (
-    <Grid container direction="row" justifyContent="center" alignItems="center" className="fundoCP">
-    <Container maxWidth="sm" className="topo">
-      <form onSubmit={onSubmit}>
-        <Typography
-          variant="h3"
-          color="textSecondary"
-          component="h1"
-          align="center"
-          className="fonte"
-          
-        >Formulário de cadastro postagem
-          
-        </Typography>
-        
-        <TextField
-          value={postagem.titulo}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
-          id="titulo"
-          label="Título *"
-          variant="outlined"
-          name="titulo"
-          margin="normal"
-          fullWidth
-          className="TextField"
-        />
-        <TextField
-          value={postagem.texto}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
-          id="texto"
-          label="Texto *"
-          name="texto"
-          variant="outlined"
-          margin="normal"
-          fullWidth
-          className="TextField"
-        />
-
-        <TextField
-          value={postagem.imagem}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
-          id="imagem"
-          label="Imagem"
-          name="imagem"
-          variant="outlined"
-          margin="normal"
-          fullWidth
-          className="TextField"
-        />
-
-        <TextField
-          value={postagem.bairro}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
-          id="bairro"
-          label="Bairro *" 
-          name="bairro"
-          variant="outlined"
-          margin="normal"
-          fullWidth
-          className="TextField"
-        />
-
-        <FormControl>
-          <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
-          <Select
-            labelId="demo-simple-select-helper-label"
-            id="demo-simple-select-helper"
-            onChange={(e) =>
-              buscaId(`/tema/${e.target.value}`, setTema, {
-                headers: {
-                  Authorization: token,
-                },
-              })
-            }
+    <Grid
+      container
+      direction="row"
+      justifyContent="center"
+      alignItems="center"
+      className="fundoCP"
+    >
+      <Container maxWidth="sm" className="topo">
+        <form onSubmit={onSubmit} className="tamanho-input">
+          <Typography
+            variant="h3"
+            color="textSecondary"
+            component="h1"
+            align="center"
+            className="fonte"
           >
-            {temas.map((tema) => (
-              <MenuItem value={tema.id}>{tema.nome}</MenuItem>
-            ))}
-          </Select>
-          <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-          <Button type="submit" 
-          variant="contained" 
-          className="cor">
-            <Typography className="fonte">
-              Finalizar
-            </Typography>
-          </Button>
-        </FormControl>
-      </form>
-    </Container>
-        </Grid>
+            Formulário de cadastro postagem
+          </Typography>
+
+          <label>Título *</label>
+          <input
+            value={postagem.titulo}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
+            id="titulo"
+            name="titulo"
+            placeholder="Digite o título da postagem"
+            className="TextField2"
+          ></input>
+
+          <label>Texto *</label>
+          <input
+            value={postagem.texto}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
+            id="texto"
+            name="texto"
+            placeholder="Digite o texto da postagem"
+            className="TextField2"
+          ></input>
+
+          <label>Imagem</label>
+          <input
+            value={postagem.imagem}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
+            id="imagem"
+            name="imagem"
+            placeholder="Insira o link da imagem"
+            className="TextField2"
+          ></input>
+
+          <label>Bairro *</label>
+          <input
+            value={postagem.bairro}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
+            id="bairro"
+            name="bairro"
+            placeholder="Digite o nome do bairro da solicitação"
+            className="TextField2"
+          ></input>
+
+          <FormControl>
+            <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
+            <Select
+              labelId="demo-simple-select-helper-label"
+              id="demo-simple-select-helper"
+              onChange={(e) =>
+                buscaId(`/tema/${e.target.value}`, setTema, {
+                  headers: {
+                    Authorization: token,
+                  },
+                })
+              }
+            >
+              {temas.map((tema) => (
+                <MenuItem value={tema.id}>{tema.nome}</MenuItem>
+              ))}
+            </Select>
+            <FormHelperText>Escolha um tema para a postagem</FormHelperText>
+            <div className="espacamento-cadastro"></div>
+            <Button type="submit" variant="contained" className="cor">
+              <Typography className="fonte">Finalizar</Typography>
+            </Button>
+          </FormControl>
+        </form>
+      </Container>
+    </Grid>
   );
 }
 export default CadastroPost;

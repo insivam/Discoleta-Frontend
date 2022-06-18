@@ -4,7 +4,7 @@
 .tio{
     width: 500px ;
     max-width: 100%;
-    border-radius: 20px !important;
+    border-radius: 10px !important;
 }
 .button-deletar{
     background-color: red!important;

@@ -1,3 +1,14 @@
 body {
-    background-color:   #056444 !important;
-  }
+  background-color: #056444 !important;
+}
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #398c60;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #7cb4a7;
+}

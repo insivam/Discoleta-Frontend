@@ -76,7 +76,7 @@ function Login() {
         progress: undefined,
       });
     } catch (error) {
-      toast.error("Dados do usuário inconsistente!", {
+      toast.error("Email ou Senha incorretos!", {
         position: "top-right",
         autoClose: 1400,
         hideProgressBar: false,

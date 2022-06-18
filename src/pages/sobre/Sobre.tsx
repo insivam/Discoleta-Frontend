@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Typography, Grid, Button, TextField } from "@material-ui/core";
 import { Link, useNavigate } from "react-router-dom";
 import "./Sobre.css";
@@ -13,31 +13,124 @@ function Sobre() {
   );
   let navigate = useNavigate();
 
-  function goLogout() {
-    toast.info("Usuário deslogado", {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
-    navigate("/login");
-  }
+  useEffect(() => {
+    if (token == "") {
+      toast.error("Você precisa estar logado!", {
+        position: "top-right",
+        autoClose: 1400,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      navigate("/login");
+    }
+  }, [token]);
 
   return (
-    <>
+    <Grid container className="grid-master-home">
+      <Grid item sm={2}></Grid>
       <Grid
+        sm={8}
+        item
         container
         direction="row"
         justifyContent="center"
         alignItems="center"
-        className="form"
       >
-        <Grid sm={4}>
-          <h1 className="sobre-meio">Sobre o Discoleta: </h1>
-          <p className="sobre-texto-meio">
+        <Grid sm={12} className="img texto-responsivo">
+          <Grid className="img2" sm={5}>
+            <h1 className="sobre-meio">Sobre o Discoleta:</h1>
+            <p className="sobre-texto-meio">
+              Discoleta é uma Rede Social que facilita o descarte do lixo
+              reciclável, conectando pessoas que se disponibilizam para uma rede
+              que não tem fácil acesso a um ecoponto. Esse projeto foi baseado
+              na ODS 11 - Cidades e Comunidades Sustentáveis (ONU). Pessoas
+              maiores de 13 anos podem criar uma conta registrando um endereço
+              de e-mail e nome de usuário.
+            </p>
+          </Grid>
+          <img
+            height={600}
+            width={1000}
+            src="https://cdn.discordapp.com/attachments/961308831533637685/987473351914180648/unknown.png"
+            alt=""
+          />
+        </Grid>
+        <Grid className="img agrid">
+          <img
+            src="https://media-exp2.licdn.com/dms/image/C4E03AQEWMbjeIZGOnw/profile-displayphoto-shrink_200_200/0/1624027279253?e=1660780800&v=beta&t=HSlzmvYQSPQMVP0nqB6hswx8ZU2LwYkA2vQYU_81I-w"
+            alt="Aline"
+            className="imgUser"
+            justify-content="right"
+          ></img>
+          <p>
+            Discoleta é uma Rede Social que facilita o descarte do lixo
+            reciclável, conectando pessoas que se disponibilizam para uma rede
+            que não tem fácil acesso a um ecoponto. Esse projeto foi baseado na
+            ODS 11 - Cidades e Comunidades Sustentáveis (ONU). Pessoas maiores
+            de 13 anos podem criar uma conta registrando um endereço de e-mail e
+            nome de usuário3.
+          </p>
+        </Grid>
+        <Grid className="img agrid">
+          <p>
+            Discoleta é uma Rede Social que facilita o descarte do lixo
+            reciclável, conectando pessoas que se disponibilizam para uma rede
+            que não tem fácil acesso a um ecoponto. Esse projeto foi baseado na
+            ODS 11 - Cidades e Comunidades Sustentáveis (ONU). Pessoas maiores
+            de 13 anos podem criar uma conta registrando um endereço de e-mail e
+            nome de usuário2.
+          </p>
+          <img
+            src="https://media-exp2.licdn.com/dms/image/C4D03AQGpEEWKiBofeg/profile-displayphoto-shrink_200_200/0/1645541636362?e=1660780800&v=beta&t=r48yUfADQcI7kUnq4ugx65AuJaIrXJ15MkKKfMMJL1U"
+            alt="Day"
+            className="imgUser"
+            justify-content="right"
+          ></img>
+        </Grid>
+        <Grid className="img agrid">
+          <img
+            src="https://media-exp2.licdn.com/dms/image/D5635AQFGvtvMbqY35A/profile-framedphoto-shrink_200_200/0/1650396708274?e=1656108000&v=beta&t=r0FNmid2BhDxBJWrZmcWtaHXrVBFOAdrrDQxjK0CcbQ"
+            alt="Milena"
+            className="imgUser"
+            justify-content="right"
+          ></img>
+          <p>
+            Discoleta é uma Rede Social que facilita o descarte do lixo
+            reciclável, conectando pessoas que se disponibilizam para uma rede
+            que não tem fácil acesso a um ecoponto. Esse projeto foi baseado na
+            ODS 11 - Cidades e Comunidades Sustentáveis (ONU). Pessoas maiores
+            de 13 anos podem criar uma conta registrando um endereço de e-mail e
+            nome de usuárioaaaaaaaaaaa.
+          </p>
+        </Grid>
+        <Grid className="img agrid">
+          <p>
+            Discoleta é uma Rede Social que facilita o descarte do lixo
+            reciclável, conectando pessoas que se disponibilizam para uma rede
+            que não tem fácil acesso a um ecoponto. Esse projeto foi baseado na
+            ODS 11 - Cidades e Comunidades Sustentáveis (ONU). Pessoas maiores
+            de 13 anos podem criar uma conta registrando um endereço de e-mail e
+            nome de usuário.
+          </p>
+
+          <img
+            src="https://media-exp2.licdn.com/dms/image/C4D03AQGpVN75f52c-g/profile-displayphoto-shrink_200_200/0/1650238530224?e=1660780800&v=beta&t=gQMHXGPCb2rgcx2jpN1NnWB8rZ8N2qnyQlAIUoRDnic"
+            alt="Vitor"
+            className="imgUser"
+            justify-content="right"
+          ></img>
+        </Grid>
+        <Grid className="img agrid">
+          <img
+            src="https://media-exp2.licdn.com/dms/image/C4D03AQFi7fpRqTB9OA/profile-displayphoto-shrink_200_200/0/1651755095839?e=1660780800&v=beta&t=w3pc2Ij3v2QmWE_tiW9p8r6GlC2nx95xaERSCyXfl1c"
+            alt="Will"
+            className="imgUser"
+            justify-content="right"
+          ></img>
+          <p>
             Discoleta é uma Rede Social que facilita o descarte do lixo
             reciclável, conectando pessoas que se disponibilizam para uma rede
             que não tem fácil acesso a um ecoponto. Esse projeto foi baseado na
@@ -47,7 +140,6 @@ function Sobre() {
           </p>
         </Grid>
       </Grid>
-
       <Grid
         container
         direction="row"
@@ -64,7 +156,6 @@ function Sobre() {
                 component="h4"
                 align="center"
                 className="textos1"
-                
               >
                 <Typography
                   variant="h4"
@@ -74,45 +165,40 @@ function Sobre() {
                   align="center"
                   className="textos2"
                 >
-                  Entre em contato com o Discoleta:
+                  Entre em contato com o{" "}
+                  <span className="discoleta">Discoleta</span>:
                 </Typography>
               </Typography>
-              <TextField
+              <label>Nome</label>
+              <input
                 id="nome"
-                label="Nome"
-                variant="outlined"
                 name="nome"
-                margin="normal"
                 placeholder="Digite seu nome"
-                className="TextField"
+                className="TextField2"
               />
-              <TextField
+              <label>E-mail</label>
+              <input
                 id="email"
-                label="E-mail"
-                variant="outlined"
                 name="email"
-                margin="normal"
                 placeholder="Digite seu e-mail"
-                className="TextField"
+                className="TextField2"
               />
-              <TextField
-                id="assunto"
-                label="Assunto"
-                variant="outlined"
-                name="assunto"
-                margin="normal"
-                placeholder="Digite o assunto da mensagem"
-                className="TextField"
+              <label>Assunto</label>
+              <input
+                id="Assunto"
+                name="Assunto"
+                placeholder="Digite seu assunto"
+                className="TextField2"
               />
+              <label>Mensagem </label>
               <textarea
                 name="mensagem"
-                placeholder="   Digite sua mensagem!"
+                placeholder="Digite sua mensagem!"
                 id="mensagem"
-                className="TextField"
+                className="TextField2"
                 cols={50}
                 rows={10}
               />
-
               <Box marginTop={2} textAlign="center">
                 <Button type="submit" variant="contained" className="cor">
                   <Typography className="fonte">Enviar</Typography>
@@ -122,7 +208,7 @@ function Sobre() {
           </Box>
         </Grid>
       </Grid>
-    </>
+    </Grid>
   );
 }
 

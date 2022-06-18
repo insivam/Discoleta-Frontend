@@ -14,6 +14,8 @@ import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
 import { UserState } from "../../../store/tokens/userReducer";
 import { Box, Grid } from "@mui/material";
+import DeleteIcon from "@material-ui/icons/Delete";
+import BorderColorIcon from "@material-ui/icons/BorderColor";
 
 function ListaTema() {
   const [temas, setTemas] = useState<Tema[]>([]);
@@ -85,7 +87,7 @@ function ListaTema() {
                         size="small"
                         color="primary"
                       >
-                        <Typography className="fonte">Editar</Typography>
+                        <BorderColorIcon>Editar</BorderColorIcon>
                       </Button>
                     </Box>
                   </Link>
@@ -94,8 +96,12 @@ function ListaTema() {
                     className="text-decorator-none"
                   >
                     <Box mx={1}>
-                      <Button variant="contained" size="small" className="button-deletar">
-                        <Typography className="fonte">Deletar</Typography>
+                      <Button
+                        variant="contained"
+                        size="small"
+                        className="button-deletar"
+                      >
+                        <DeleteIcon>Deletar</DeleteIcon>
                       </Button>
                     </Box>
                   </Link>

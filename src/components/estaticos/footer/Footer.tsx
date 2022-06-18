@@ -88,33 +88,33 @@ function Footer() {
             </Box>
           </Box>
           <Box className="box2">
-            <Box paddingTop={1}>
-              <Typography
-                variant="subtitle2"
-                align="center"
-                gutterBottom
-                className="textos"
-              >
-                © 2022 Copyright:
-              </Typography>
-            </Box>
-            <Box>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://github.com/Discoleta"
-                className="eme"
-              >
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://github.com/Discoleta"
+              className="eme"
+            >
+              <Box paddingTop={1}>
+                <Typography
+                  variant="subtitle2"
+                  align="center"
+                  gutterBottom
+                  className="textos"
+                >
+                  © 2022 Copyright:
+                </Typography>
+              </Box>
+              <Box>
                 <Typography
                   variant="subtitle2"
                   gutterBottom
                   align="center"
                   className="textos"
-                  >
+                >
                   Discoleta
                 </Typography>
-              </a>
-            </Box>
+              </Box>
+            </a>
           </Box>
         </Grid>
       </Grid>

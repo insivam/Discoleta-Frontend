@@ -19,6 +19,8 @@ import { useSelector } from "react-redux";
 import { UserState } from "../../../store/tokens/userReducer";
 import { toast } from "react-toastify";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import DeleteIcon from "@material-ui/icons/Delete";
+import EditIcon from "@mui/icons-material/Edit";
 
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([]);
@@ -64,24 +66,22 @@ function ListaPostagem() {
         <Box m={2} flexDirection="row">
           <Card variant="outlined" className="caixa-lista">
             <CardContent>
-              <div>
+              <div className="um-pra-cada-lado">
                 <Typography variant="h5" component="h2">
                   {post.titulo}
                 </Typography>
 
-                <Typography variant="body2" component="p">
-                  {post.texto}
+                <Typography variant="body2" component="p" className="bairro">
+                  {post.bairro}
                 </Typography>
               </div>
-              <div>
-                <Typography variant="h6" component="p">
-                  {post.tema?.nome}
-                </Typography>
-                <Typography align="right" variant="body2" component="p">
-                  {/* formata a data para pt-BR e escreve as iniciais */}
-                  {Intl.DateTimeFormat("pt-BR").format(Date.parse(post.data))}
-                </Typography>
-              </div>
+
+              <Typography variant="h6" component="p">
+                {post.tema?.nome}
+              </Typography>
+              <Typography variant="body2" component="p">
+                {post.texto}
+              </Typography>
 
               <div className="div-imagem">
                 {
@@ -97,44 +97,47 @@ function ListaPostagem() {
                   )
                 }
               </div>
-
-              <Typography variant="body2" component="p" className="bairro">
-                {post.bairro}
-              </Typography>
             </CardContent>
-            <CardActions className="a-direita">
-              <Box display="flex" justifyContent="center" mb={1.5}>
-                <Link
-                  to={`/formularioPostagem/${post.id}`}
-                  className="text-decorator-none"
-                >
-                  <Box mx={1}>
-                    <Button
-                      variant="contained"
-                      className="button-entrar"
-                      size="small"
-                      color="primary"
-                    >
-                      Editar
-                    </Button>
-                  </Box>
-                </Link>
-                <Link
-                  to={`/deletarPostagem/${post.id}`}
-                  className="text-decorator-none"
-                >
-                  <Box mx={1}>
-                    <Button
-                      variant="contained"
-                      size="small"
-                      color="secondary"
-                      className="button-deletar"
-                    >
-                      deletar
-                    </Button>
-                  </Box>
-                </Link>
-              </Box>
+            <CardActions className="um-pra-cada-lado">
+              <div>
+                <Typography align="right" variant="body2" component="p">
+                  {Intl.DateTimeFormat("pt-BR").format(Date.parse(post.data))}
+                </Typography>
+              </div>
+              <div>
+                <Box display="flex" justifyContent="end" mb={1.5}>
+                  <Link
+                    to={`/formularioPostagem/${post.id}`}
+                    className="text-decorator-none"
+                  >
+                    <Box mx={1}>
+                      <Button
+                        variant="contained"
+                        className="button-entrar"
+                        size="small"
+                        color="primary"
+                      >
+                        <EditIcon>Editar</EditIcon>
+                      </Button>
+                    </Box>
+                  </Link>
+                  <Link
+                    to={`/deletarPostagem/${post.id}`}
+                    className="text-decorator-none"
+                  >
+                    <Box mx={1}>
+                      <Button
+                        variant="contained"
+                        size="small"
+                        color="secondary"
+                        className="button-deletar"
+                      >
+                        <DeleteIcon>deletar</DeleteIcon>
+                      </Button>
+                    </Box>
+                  </Link>
+                </Box>
+              </div>
             </CardActions>
           </Card>
         </Box>

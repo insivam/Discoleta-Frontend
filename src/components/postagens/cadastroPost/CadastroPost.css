@@ -1,22 +1,33 @@
-.topo{
-    margin-top: 20px;
-}   
-
-.cor{
-    background-color: #398c60 !important;
-    
+.topo {
+  margin-top: 20px;
 }
 
-.TextField{
-    background-color: #03422d !important;
-    border-radius: 20px;
-
+.cor {
+  background-color: #056444 !important;
 }
 
-.fundoCP{
-    background-color: #056444;
+.TextField {
+  background-color: #03422d !important;
+  border-radius: 20px;
 }
 
+.fundoCP {
+  background-color: #056444;
+}
 
+.tamanho-input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #000;
+  padding: 8%;
+  margin-bottom: 10px;
+  background-color: #398c60;
+}
 
-
+.espacamento-cadastro {
+  margin-top: 25px;
+}

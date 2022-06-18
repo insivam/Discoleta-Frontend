@@ -3,7 +3,6 @@ import "./App.css";
 import Login from "./pages/Login/Login";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Footer from "./components/estaticos/footer/Footer";
-import Navbar from "./components/estaticos/navbar/Navbar";
 import Home from "./pages/home/Home";
 import Sobre from "./pages/sobre/Sobre";
 import Cadastro from "./pages/cadastro-usuario/CadastroUsuario";
@@ -13,25 +12,22 @@ import ListaTema from "./components/temas/listaTema/ListaTema";
 import { Provider } from "react-redux";
 import store from "./store/store";
 import NotFoundPage from "./pages/notFoundPage/NotFoundPage";
-import { Box, Grid, Stack } from "@mui/material";
-import Nav2 from "./components/estaticos/navbar/nav2";
+import { Grid } from "@mui/material";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import ListaPostagem from "./components/postagens/listapostagem/ListaPostagem";
 import CadastroPost from "./components/postagens/cadastroPost/CadastroPost";
 import DeletarPostagem from "./components/postagens/deletarPostagem/DeletarPostagem";
-import NavBar from "./components/estaticos/navbar/Navbar";
+import Navbar from "./components/estaticos/navbar/Navbar";
 import Perfil from "./pages/perfil/Perfil";
 
 function App() {
   return (
-    
     <Provider store={store}>
-    <ToastContainer />
+      <ToastContainer />
       <Router>
-        <Grid direction="column" >
+        <Grid direction="column">
           <Grid sm={2}>
-            <Nav2 />
+            <Navbar />
           </Grid>
           <div style={{ minHeight: "100vh" }}>
             <Routes>
@@ -40,10 +36,10 @@ function App() {
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="/home" element={<Home />} />
               <Route path="/perfil" element={<Perfil />} />
-              <Route path="/posts" element={<ListaPostagem />} />
               <Route path="/formularioPostagem" element={<CadastroPost />} />
               <Route
-                path="/formularioPostagem/:id" element={<CadastroPost />}
+                path="/formularioPostagem/:id"
+                element={<CadastroPost />}
               />
               <Route
                 path="/deletarPostagem/:id"

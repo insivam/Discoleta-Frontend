@@ -57,3 +57,25 @@
   width: 300px;
   margin-top: 5px;
 }
+.anuncio1{
+  margin-top: 5% !important;
+  border-radius: 10px;
+  margin: 3px;
+}
+
+.anuncio{
+border-radius: 10px !important;
+margin-top: 5% !important;
+background-color: #b7b8b9;
+width:99%;
+height: 100%;
+align-items: center;
+display: flex;
+font-size: 70px;
+justify-content: center;
+margin: 3px;
+}
+
+.ads{
+  position: fixed;
+}

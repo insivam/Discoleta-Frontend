@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import Tema from "../../../models/Tema";
 import { buscaId, post, put } from "../../../services/Service";
 import { UserState } from "../../../store/tokens/userReducer";
+import "./CadastroTema.css";
 
 function CadastroTema() {
   let navigate = useNavigate();
@@ -125,7 +126,7 @@ function CadastroTema() {
 
   return (
     <Container maxWidth="sm" className="topo">
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} className="tamanho-input">
         <Typography
           variant="h3"
           color="textSecondary"
@@ -135,32 +136,28 @@ function CadastroTema() {
         >
           Formulário de cadastro tema
         </Typography>
-        <TextField
+        <label>Nome *</label>
+        <input
           value={tema.nome}
           onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)}
           id="nome"
-          label="Nome *"
-          variant="outlined"
           name="nome"
-          margin="normal"
-          fullWidth
-          className="TextField"
-        />
-        <TextField
+          placeholder="Digite o nome do tema"
+          className="TextField2"
+        ></input>
+        <label>Descrição *</label>
+
+        <input
           value={tema.descricao}
           onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)}
           id="descricao"
-          label="Descrição *"
-          variant="outlined"
           name="descricao"
-          margin="normal"
-          fullWidth
-          className="TextField" 
-        />
+          placeholder="Digite o texto da descrição"
+          className="TextField2"
+        ></input>
+        <div className="espacamento-tema"></div>
         <Button type="submit" variant="contained" className="cor">
-          <Typography className="fonte">
-            Finalizar
-          </Typography>
+          <Typography className="fonte">Finalizar</Typography>
         </Button>
       </form>
     </Container>

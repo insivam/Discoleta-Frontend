@@ -66,7 +66,28 @@ function Home() {
         </div>
         <ListaPostagem />
       </Grid>
-      <Grid item sm={2}></Grid>
+      <Grid item sm={2}>
+        <div className="ads">
+          <img
+            width="99%"
+            height="20%"
+            src="https://scontent.fcgh8-1.fna.fbcdn.net/v/t1.18169-9/22195351_1687690544575426_330836445047812894_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=973b4a&_nc_ohc=FlmGSe3ZBgMAX9tPX7a&_nc_ht=scontent.fcgh8-1.fna&oh=00_AT8WCgUyOlcLdlea0CpYXbJRXffVVbMneif3-F-OQPvXgA&oe=62D163C3"
+            className="anuncio1"
+          />
+          <img
+            width="99%"
+            height="20%"
+            src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/acb71756764347.59bb064d4bdf6.png"
+            className="anuncio1"
+          />
+          <img
+            width="99%"
+            height="20%"
+            src="https://media4.giphy.com/media/Yo2H7HmosQ12TXdwMt/giphy.gif?cid=ecf05e47wxn9e1teeu4byn043cfhxokhb7l1v0b1pa3j2p6r&rid=giphy.gif&ct=g"
+            className="anuncio1"
+          />
+        </div>
+      </Grid>
     </Grid>
   );
 }
