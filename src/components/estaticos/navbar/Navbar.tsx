@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import {
-  AppBar,
   Toolbar,
   Avatar,
   Divider,
@@ -21,8 +20,9 @@ import {
   Home,
   Book,
 } from "@material-ui/icons";
+import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 import LogoutIcon from "@mui/icons-material/Logout";
-import { Box } from "@mui/material";
+import AddBoxIcon from "@mui/icons-material/AddBox";
 import { useDispatch, useSelector } from "react-redux";
 import { UserState } from "../../../store/tokens/userReducer";
 import { addToken } from "../../../store/tokens/actions";
@@ -159,8 +159,8 @@ function Navbar() {
 
           <li className="nav-item">
             <Link to="/formularioPostagem" className="nav-link">
-              <Apps />
-              <span className="link-text">Postagem</span>
+              <AddBoxIcon />
+              <span className="link-text">Nova Postagem</span>
             </Link>
           </li>
 
@@ -173,7 +173,7 @@ function Navbar() {
 
           <li className="nav-item">
             <Link to="/formularioTema" className="nav-link">
-              <Apps />
+              <BookmarkAddIcon />
               <span className="link-text">Novo tema</span>
             </Link>
           </li>
