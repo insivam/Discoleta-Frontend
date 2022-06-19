@@ -64,7 +64,9 @@ function Home() {
             </Box>
           </Grid>
         </div>
-        <ListaPostagem />
+        <div className="tamanho-post">
+          <ListaPostagem />
+        </div>
       </Grid>
       <Grid item sm={2}>
         <div className="ads">

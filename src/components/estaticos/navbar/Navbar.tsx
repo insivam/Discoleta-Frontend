@@ -137,12 +137,11 @@ function Navbar() {
             </Link>
           </li>
 
-          <span>
+          <span className="foto-nav">
             <Link to="/perfil">
               <Avatar className="classes.avatar" src={user.foto} />
             </Link>
           </span>
-          <Typography className="link-text"></Typography>
 
           <li className="nav-item">
             <Link to="/home" className="nav-link">
@@ -175,7 +174,7 @@ function Navbar() {
           <li className="nav-item">
             <Link to="/formularioTema" className="nav-link">
               <Apps />
-              <span className="link-text">Temas</span>
+              <span className="link-text">Novo tema</span>
             </Link>
           </li>
 

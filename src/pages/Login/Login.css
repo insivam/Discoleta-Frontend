@@ -1,71 +1,68 @@
-.AnimacaoLogo{
-    animation: fadeInRight 3s;
-    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50% !important;
+.AnimacaoLogo {
+  animation: fadeInRight 3s;
+  border-radius: 50% 50% 50% 50% / 50% 50% 50% 50% !important;
 }
 
-@keyframes fadeInRight{
-    from{
-        opacity: 0;
-        transform: translateX(300px);
-    }
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(300px);
+  }
 
-    to{
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
 
-.criar-conta{
-    font-weight: bold !important;
-    border-radius: 20px !important;
-    text-decoration: none;
-    color: white !important;
-  
+.criar-conta {
+  font-weight: bold !important;
+  border-radius: 20px !important;
+  text-decoration: none;
+  color: white !important;
 }
 .button-entrar {
-    background-color: #056444!important;
-    text-decoration: none;
-    border-radius: 20px !important; 
-    color: white !important;
-    font-weight: bold !important;
+  background-color: #056444 !important;
+  text-decoration: none;
+  border-radius: 20px !important;
+  color: white !important;
+  font-weight: bold !important;
 }
 
-
-
-.input{
-    background-color: white !important;
-    border-color: transparent !important;
-    border-radius: 20px !important; 
-    width: 70% !important;
+.input {
+  background-color: white !important;
+  border-color: transparent !important;
+  border-radius: 20px !important;
+  width: 70% !important;
 }
 
-.background-grid-left{
-    border-radius:  0% 50% 50% 0% / 50% 50% 50% 50% !important;
-    background-color: #151719 !important;
+.background-grid-left {
+  border-radius: 0% 50% 50% 0% / 50% 50% 50% 50% !important;
+  background-color: #151719 !important;
 }
-label{
-    display: block !important;
-    font-size: 20px !important;
-    margin: 0 0 10px !important;
-    color: white !important;
-    font-weight: bold;
+label {
+  display: block !important;
+  font-size: 20px !important;
+  margin: 0 0 10px !important;
+  color: white !important;
+  font-weight: bold;
 }
 
 .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-    border-color: transparent!important;
-  }
-.MuiOutlinedInput-root fieldset {
-    border-color: transparent !important;
+  border-color: transparent !important;
 }
-.caixa-label{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.MuiOutlinedInput-root fieldset {
+  border-color: transparent !important;
+}
+.caixa-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.traiagulo-login{
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 0 22em 42em;
-    border-color: transparent transparent #03422d transparent;
+.traiagulo-login {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 22em 42em;
+  border-color: transparent transparent #03422d transparent;
 }

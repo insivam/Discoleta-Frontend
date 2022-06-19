@@ -4,9 +4,9 @@
 .head-home {
   border-bottom: 1px solid #9ca9b3;
 }
-.grid-master-home{
-    background-color:#056444 !important;
-    border-radius: 20px !important;
+.grid-master-home {
+  background-color: #056444 !important;
+  border-radius: 20px !important;
 }
 .fonte-home {
   font-family: "Anton", serif !important;
@@ -16,9 +16,11 @@
   align-self: center;
   width: 300px;
 }
+
 .caixa {
   background-color: #398c60 !important;
-  border-radius: 20px;
+  border-radius: 5px;
+  padding-bottom: 20px;
 }
 
 .titulo {
@@ -57,25 +59,48 @@
   width: 300px;
   margin-top: 5px;
 }
-.anuncio1{
+.anuncio1 {
   margin-top: 5% !important;
   border-radius: 10px;
+  margin: 2px;
+}
+
+.anuncio {
+  border-radius: 10px !important;
+  margin-top: 5% !important;
+  background-color: #b7b8b9;
+  width: 99%;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  font-size: 70px;
+  justify-content: center;
   margin: 3px;
 }
 
-.anuncio{
-border-radius: 10px !important;
-margin-top: 5% !important;
-background-color: #b7b8b9;
-width:99%;
-height: 100%;
-align-items: center;
-display: flex;
-font-size: 70px;
-justify-content: center;
-margin: 3px;
+.ads {
+  position: fixed;
 }
 
-.ads{
-  position: fixed;
+@media only screen and (max-width: 1080px) {
+  .ads {
+    display: none;
+  }
+
+  .anuncio {
+    display: none;
+  }
+
+  .anuncio1 {
+    display: none;
+  }
+
+  .col {
+    width: 100%;
+  }
+
+  .tamanho-post {
+    font-size: 20px;
+    width: 100%;
+  }
 }

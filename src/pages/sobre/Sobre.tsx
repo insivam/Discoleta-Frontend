@@ -40,8 +40,8 @@ function Sobre() {
         alignItems="center"
       >
         <Grid sm={12} className="img texto-responsivo">
-          <Grid className="img2" sm={5}>
-            <h1 className="sobre-meio">Sobre o Discoleta:</h1>
+          <Grid className="img2">
+            <h1 className="sobre-meio">Sobre a Discoleta:</h1>
             <p className="sobre-texto-meio">
               Discoleta é uma Rede Social que facilita o descarte do lixo
               reciclável, conectando pessoas que se disponibilizam para uma rede
@@ -51,94 +51,140 @@ function Sobre() {
               de e-mail e nome de usuário.
             </p>
           </Grid>
+
           <img
-            height={600}
-            width={1000}
+            width="100%"
             src="https://cdn.discordapp.com/attachments/961308831533637685/987473351914180648/unknown.png"
             alt=""
           />
         </Grid>
-        <Grid className="img agrid">
-          <img
-            src="https://media-exp2.licdn.com/dms/image/C4E03AQEWMbjeIZGOnw/profile-displayphoto-shrink_200_200/0/1624027279253?e=1660780800&v=beta&t=HSlzmvYQSPQMVP0nqB6hswx8ZU2LwYkA2vQYU_81I-w"
-            alt="Aline"
-            className="imgUser"
-            justify-content="right"
-          ></img>
-          <p>
-            Discoleta é uma Rede Social que facilita o descarte do lixo
-            reciclável, conectando pessoas que se disponibilizam para uma rede
-            que não tem fácil acesso a um ecoponto. Esse projeto foi baseado na
-            ODS 11 - Cidades e Comunidades Sustentáveis (ONU). Pessoas maiores
-            de 13 anos podem criar uma conta registrando um endereço de e-mail e
-            nome de usuário3.
-          </p>
-        </Grid>
-        <Grid className="img agrid">
-          <p>
-            Discoleta é uma Rede Social que facilita o descarte do lixo
-            reciclável, conectando pessoas que se disponibilizam para uma rede
-            que não tem fácil acesso a um ecoponto. Esse projeto foi baseado na
-            ODS 11 - Cidades e Comunidades Sustentáveis (ONU). Pessoas maiores
-            de 13 anos podem criar uma conta registrando um endereço de e-mail e
-            nome de usuário2.
-          </p>
-          <img
-            src="https://media-exp2.licdn.com/dms/image/C4D03AQGpEEWKiBofeg/profile-displayphoto-shrink_200_200/0/1645541636362?e=1660780800&v=beta&t=r48yUfADQcI7kUnq4ugx65AuJaIrXJ15MkKKfMMJL1U"
-            alt="Day"
-            className="imgUser"
-            justify-content="right"
-          ></img>
-        </Grid>
-        <Grid className="img agrid">
-          <img
-            src="https://media-exp2.licdn.com/dms/image/D5635AQFGvtvMbqY35A/profile-framedphoto-shrink_200_200/0/1650396708274?e=1656108000&v=beta&t=r0FNmid2BhDxBJWrZmcWtaHXrVBFOAdrrDQxjK0CcbQ"
-            alt="Milena"
-            className="imgUser"
-            justify-content="right"
-          ></img>
-          <p>
-            Discoleta é uma Rede Social que facilita o descarte do lixo
-            reciclável, conectando pessoas que se disponibilizam para uma rede
-            que não tem fácil acesso a um ecoponto. Esse projeto foi baseado na
-            ODS 11 - Cidades e Comunidades Sustentáveis (ONU). Pessoas maiores
-            de 13 anos podem criar uma conta registrando um endereço de e-mail e
-            nome de usuárioaaaaaaaaaaa.
-          </p>
-        </Grid>
-        <Grid className="img agrid">
-          <p>
-            Discoleta é uma Rede Social que facilita o descarte do lixo
-            reciclável, conectando pessoas que se disponibilizam para uma rede
-            que não tem fácil acesso a um ecoponto. Esse projeto foi baseado na
-            ODS 11 - Cidades e Comunidades Sustentáveis (ONU). Pessoas maiores
-            de 13 anos podem criar uma conta registrando um endereço de e-mail e
-            nome de usuário.
-          </p>
 
-          <img
-            src="https://media-exp2.licdn.com/dms/image/C4D03AQGpVN75f52c-g/profile-displayphoto-shrink_200_200/0/1650238530224?e=1660780800&v=beta&t=gQMHXGPCb2rgcx2jpN1NnWB8rZ8N2qnyQlAIUoRDnic"
-            alt="Vitor"
-            className="imgUser"
-            justify-content="right"
-          ></img>
-        </Grid>
-        <Grid className="img agrid">
-          <img
-            src="https://media-exp2.licdn.com/dms/image/C4D03AQFi7fpRqTB9OA/profile-displayphoto-shrink_200_200/0/1651755095839?e=1660780800&v=beta&t=w3pc2Ij3v2QmWE_tiW9p8r6GlC2nx95xaERSCyXfl1c"
-            alt="Will"
-            className="imgUser"
-            justify-content="right"
-          ></img>
-          <p>
-            Discoleta é uma Rede Social que facilita o descarte do lixo
-            reciclável, conectando pessoas que se disponibilizam para uma rede
-            que não tem fácil acesso a um ecoponto. Esse projeto foi baseado na
-            ODS 11 - Cidades e Comunidades Sustentáveis (ONU). Pessoas maiores
-            de 13 anos podem criar uma conta registrando um endereço de e-mail e
-            nome de usuário.
-          </p>
-        </Grid>
+        <section className="team-section">
+          <Grid className="container">
+            <Box className="row">
+              <div className="section-title">
+                <h1>Nosso Time</h1>
+                <p>Entre em contato com os nossos desenvolvedores</p>
+              </div>
+            </Box>
+            <Grid className="row">
+              <Box className="team-items">
+                <Box className="item">
+                  <img
+                    src="https://media-exp2.licdn.com/dms/image/C4E03AQEWMbjeIZGOnw/profile-displayphoto-shrink_200_200/0/1624027279253?e=1660780800&v=beta&t=HSlzmvYQSPQMVP0nqB6hswx8ZU2LwYkA2vQYU_81I-w"
+                    alt="team"
+                  />
+                  <div className="inner">
+                    <div className="info">
+                      <h5>Aline Rasche</h5>
+                      <div className="social-links">
+                        <a
+                          href="https://www.linkedin.com/in/aline-rasche-180673189/"
+                          target="_blank"
+                        >
+                          <span className="fa fa-linkedin"></span>
+                        </a>
+                        <a
+                          href="https://github.com/alinerasche"
+                          target="_blank"
+                        >
+                          <span className="fa fa-github"></span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </Box>
+                <Box className="item">
+                  <img
+                    src="https://media-exp2.licdn.com/dms/image/C4D03AQGpEEWKiBofeg/profile-displayphoto-shrink_200_200/0/1645541636362?e=1660780800&v=beta&t=r48yUfADQcI7kUnq4ugx65AuJaIrXJ15MkKKfMMJL1U"
+                    alt="team"
+                  />
+                  <div className="inner">
+                    <div className="info">
+                      <h5>Dayana Tito</h5>
+                      <div className="social-links">
+                        <a
+                          href="https://www.linkedin.com/in/dayanatito/"
+                          target="_blank"
+                        >
+                          <span className="fa fa-linkedin"></span>
+                        </a>
+                        <a href="https://github.com/DayanaTito" target="_blank">
+                          <span className="fa fa-github"></span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </Box>
+                <Box className="item">
+                  <img src="https://i.imgur.com/RXc5FCi.jpg" alt="team" />
+                  <div className="inner">
+                    <div className="info">
+                      <h5>Milena Fernandes</h5>
+                      <div className="social-links">
+                        <a
+                          href="https://www.linkedin.com/in/milenafernandesdeoliveira/"
+                          target="_blank"
+                        >
+                          <span className="fa fa-linkedin"></span>
+                        </a>
+                        <a href="https://github.com/milenaFO" target="_blank">
+                          <span className="fa fa-github"></span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </Box>
+              </Box>
+              <Box className="team-items">
+                <Box className="item">
+                  <img
+                    src="https://media-exp2.licdn.com/dms/image/C4D03AQGpVN75f52c-g/profile-displayphoto-shrink_200_200/0/1650238530224?e=1660780800&v=beta&t=gQMHXGPCb2rgcx2jpN1NnWB8rZ8N2qnyQlAIUoRDnic"
+                    alt="team"
+                  />
+                  <div className="inner">
+                    <div className="info">
+                      <h5>Vitor Rodrigues</h5>
+                      <div className="social-links">
+                        <a
+                          href="https://www.linkedin.com/in/vitor-edsr/"
+                          target="_blank"
+                        >
+                          <span className="fa fa-linkedin"></span>
+                        </a>
+                        <a href="https://github.com/insivam" target="_blank">
+                          <span className="fa fa-github"></span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </Box>
+                <Box className="item">
+                  <img
+                    src="https://media-exp2.licdn.com/dms/image/C4D03AQFi7fpRqTB9OA/profile-displayphoto-shrink_200_200/0/1651755095839?e=1660780800&v=beta&t=w3pc2Ij3v2QmWE_tiW9p8r6GlC2nx95xaERSCyXfl1c"
+                    alt="team"
+                  />
+                  <div className="inner">
+                    <div className="info">
+                      <h5>Willian Ferreira</h5>
+                      <div className="social-links">
+                        <a
+                          href="https://www.linkedin.com/in/willfdasilva/"
+                          target="_blank"
+                        >
+                          <span className="fa fa-linkedin"></span>
+                        </a>
+                        <a href="https://github.com/willjpg" target="_blank">
+                          <span className="fa fa-github"></span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </Box>
+              </Box>
+            </Grid>
+          </Grid>
+        </section>
       </Grid>
       <Grid
         container
@@ -147,7 +193,7 @@ function Sobre() {
         alignItems="center"
       >
         <Grid alignItems="center">
-          <Box paddingX={20}>
+          <Box paddingX={10}>
             <form className="form">
               <Typography
                 variant="h4"
@@ -165,7 +211,7 @@ function Sobre() {
                   align="center"
                   className="textos2"
                 >
-                  Entre em contato com o{" "}
+                  Entre em contato com a{" "}
                   <span className="discoleta">Discoleta</span>:
                 </Typography>
               </Typography>

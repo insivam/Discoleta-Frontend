@@ -20,3 +20,13 @@
   text-decoration: none;
   font-weight: bold !important;
 }
+
+@media only screen and (max-width: 768px) {
+  .box1 {
+    display: none;
+  }
+
+  .footer {
+    padding: 20px;
+  }
+}

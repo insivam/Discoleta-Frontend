@@ -48,7 +48,6 @@ function ModalPostagem() {
       <Box display="flex" justifyContent="flex-end" className="cursor">
         <CloseIcon onClick={handleClose} />
       </Box>
-      s
       <CadastroPost />
     </div>
   );

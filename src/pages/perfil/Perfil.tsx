@@ -101,11 +101,13 @@ function Perfil() {
             alignItems="center"
             className="caixa"
           >
-            <ListaPostagem />
+            <div className="tamanho-post">
+              <ListaPostagem />
+            </div>
           </Grid>
         </Grid>
       </Grid>
-      <Grid item sm={2}></Grid>
+      <Grid item sm={2} className="perfil-sem-fundo"></Grid>
     </Grid>
   );
 }
