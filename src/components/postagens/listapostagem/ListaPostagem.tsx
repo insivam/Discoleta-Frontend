@@ -60,9 +60,13 @@ function ListaPostagem() {
     getPost();
   }, [posts.length]);
 
+  const sortedPosts = posts
+    .slice()
+    .sort((a, b) => Date.parse(b.data) - Date.parse(a.data));
+
   return (
     <>
-      {posts.map((post) => (
+      {sortedPosts.map((post) => (
         <Box m={2} flexDirection="row">
           <Card variant="outlined" className="caixa-lista">
             <CardContent>

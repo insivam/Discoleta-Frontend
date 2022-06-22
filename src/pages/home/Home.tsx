@@ -28,6 +28,7 @@ function Home() {
       navigate("/login");
     }
   }, [token]);
+
   return (
     <Grid container className="grid-master-home">
       <Grid item sm={2}></Grid>
