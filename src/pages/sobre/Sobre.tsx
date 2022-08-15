@@ -139,7 +139,7 @@ function Sobre() {
               <Box className="team-items">
                 <Box className="item">
                   <img
-                    src="https://media-exp2.licdn.com/dms/image/C4D03AQGpVN75f52c-g/profile-displayphoto-shrink_200_200/0/1650238530224?e=1660780800&v=beta&t=gQMHXGPCb2rgcx2jpN1NnWB8rZ8N2qnyQlAIUoRDnic"
+                    src="https://media-exp1.licdn.com/dms/image/C4E03AQFb-j8k13UepA/profile-displayphoto-shrink_200_200/0/1658120662894?e=1666224000&v=beta&t=Vl-La-fgVK5aKCzn02M_vDXOhlPqRrFhhr7bE_OZBaQ"
                     alt="team"
                   />
                   <div className="inner">
