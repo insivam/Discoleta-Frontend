@@ -71,7 +71,7 @@ function Sobre() {
               <Box className="team-items">
                 <Box className="item">
                   <img
-                    src="https://media-exp2.licdn.com/dms/image/C4E03AQEWMbjeIZGOnw/profile-displayphoto-shrink_200_200/0/1624027279253?e=1660780800&v=beta&t=HSlzmvYQSPQMVP0nqB6hswx8ZU2LwYkA2vQYU_81I-w"
+                    src="https://i.imgur.com/2JARXJD.jpg"
                     alt="team"
                   />
                   <div className="inner">
@@ -96,7 +96,7 @@ function Sobre() {
                 </Box>
                 <Box className="item">
                   <img
-                    src="https://media-exp2.licdn.com/dms/image/C4D03AQGpEEWKiBofeg/profile-displayphoto-shrink_200_200/0/1645541636362?e=1660780800&v=beta&t=r48yUfADQcI7kUnq4ugx65AuJaIrXJ15MkKKfMMJL1U"
+                    src="https://i.imgur.com/aReiVz0.jpg"
                     alt="team"
                   />
                   <div className="inner">
@@ -161,7 +161,7 @@ function Sobre() {
                 </Box>
                 <Box className="item">
                   <img
-                    src="https://media-exp2.licdn.com/dms/image/C4D03AQFi7fpRqTB9OA/profile-displayphoto-shrink_200_200/0/1651755095839?e=1660780800&v=beta&t=w3pc2Ij3v2QmWE_tiW9p8r6GlC2nx95xaERSCyXfl1c"
+                    src="https://i.imgur.com/wn7q0PB.png"
                     alt="team"
                   />
                   <div className="inner">
