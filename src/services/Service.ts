@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const api = axios.create({
-    baseURL: 'https://discoleta.herokuapp.com'
+    baseURL: 'https://deploy-discoleta-docker.onrender.com'
 });
 
 export const cadastroUsuario = async(url: any,dados: any,setDado: any) => { 
