@@ -57,7 +57,7 @@ function Home() {
               </div>
               <div className="col">
                 <img
-                  src="https://media.discordapp.net/attachments/961308831533637685/986630887905034250/disco-1.png"
+                  src="https://i.imgur.com/2aXA5DT.png"
                   alt="Exemplo Discoleta"
                   className="img-home"
                 />
@@ -71,24 +71,29 @@ function Home() {
       </Grid>
       <Grid item sm={2}>
         <div className="ads">
+          <a href="https://www.poupamais.pt/pt/welcome" target="_blank">
           <img
-            width="99%"
+            width="100%"
             height="20%"
-            src="https://scontent.fcgh8-1.fna.fbcdn.net/v/t1.18169-9/22195351_1687690544575426_330836445047812894_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=973b4a&_nc_ohc=FlmGSe3ZBgMAX9tPX7a&_nc_ht=scontent.fcgh8-1.fna&oh=00_AT8WCgUyOlcLdlea0CpYXbJRXffVVbMneif3-F-OQPvXgA&oe=62D163C3"
+            src="https://i.imgur.com/tN4mWze.png"
+            className="anuncio1"
+          /></a>
+          <a href="https://www.behance.net/gallery/56764347/O-Recife-Que-Voce-Quer" target="_blank">
+          <img
+            width="100%"
+            height="20%"
+            src="https://i.imgur.com/uB013gK.png"
             className="anuncio1"
           />
+          </a>
+          <a href="https://www.ailos.coop.br/" target="_blank">
           <img
-            width="99%"
+            width="100%"
             height="20%"
-            src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/acb71756764347.59bb064d4bdf6.png"
+            src="https://media4.giphy.com/media/Yo2H7HmosQ12TXdwMt/giphy.gif"
             className="anuncio1"
           />
-          <img
-            width="99%"
-            height="20%"
-            src="https://media4.giphy.com/media/Yo2H7HmosQ12TXdwMt/giphy.gif?cid=ecf05e47wxn9e1teeu4byn043cfhxokhb7l1v0b1pa3j2p6r&rid=giphy.gif&ct=g"
-            className="anuncio1"
-          />
+          </a>
         </div>
       </Grid>
     </Grid>
