@@ -53,10 +53,10 @@ function Footer() {
 
               <a href="https://github.com/DayanaTito" target="_blank">
                 <img
-                  src="https://cdn.discordapp.com/attachments/961308831533637685/984525586179448872/Open_Peeps_-_Bust.png "
+                  src="https://i.imgur.com/OKhN5E4.png"
                   alt="Dayana"
                   height="70"
-                  width="55"
+                  width="70"
                 />
               </a>
 
@@ -71,7 +71,7 @@ function Footer() {
 
               <a href="https://github.com/milenaFO" target="_blank">
                 <img
-                  src="https://cdn.discordapp.com/attachments/961308831533637685/984532069021515847/Open_Peeps_-_Bust.png"
+                  src="https://i.imgur.com/uo01EBN.png"
                   alt="Milena"
                   height="70"
                   width="60"
