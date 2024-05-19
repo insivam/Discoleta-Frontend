@@ -56,12 +56,10 @@ form {
   align-items: center;
   justify-content: center;
   margin-top: 20px;
-  color: rgb(3, 33) !important;
   font-weight: bold;
 }
 .sobre-texto-meio {
   text-align: justify;
-  color: rgb(3, 3, 3) !important ;
   font-size: 20px !important;
   font-weight: bold;
   font-family: "Josefin Sans", sans-serif;
@@ -82,45 +80,6 @@ form {
 
 input {
   color: #ffffff;
-}
-
-.img {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  top: 0px;
-  left: 0px;
-  padding: 50px;
-}
-
-.img2 {
-  flex-direction: column;
-  position: absolute;
-  top: 110px;
-  left: 60px;
-  color: #000;
-  display: flex;
-  width: 40%;
-
-  margin-left: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.img3 {
-  flex-direction: column;
-  position: absolute;
-  top: 200px;
-  right: 60px;
-  color: #000;
-  display: flex;
-  width: 1300px;
-  height: 400px;
-
-  margin-left: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .agrid {
@@ -155,7 +114,7 @@ body {
 .team-section {
   background-color: #056444;
   min-height: 100vh;
-  padding: 70px 15px 30px;
+  padding: 0px 15px 30px;
 }
 
 .container {
