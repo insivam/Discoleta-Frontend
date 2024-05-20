@@ -40,7 +40,7 @@ function Sobre() {
         alignItems="center"
       >
         <Grid sm={12} className="img texto-responsivo">
-          <Grid className="img2">
+          <Grid>
             <h1 className="sobre-meio">Sobre a Discoleta:</h1>
             <p className="sobre-texto-meio">
               Discoleta é uma Rede Social que facilita o descarte do lixo
@@ -51,12 +51,6 @@ function Sobre() {
               de e-mail e nome de usuário.
             </p>
           </Grid>
-
-          <img
-            width="100%"
-            src="https://cdn.discordapp.com/attachments/961308831533637685/987473351914180648/unknown.png"
-            alt=""
-          />
         </Grid>
 
         <section className="team-section">

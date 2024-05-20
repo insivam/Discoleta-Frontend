@@ -54,7 +54,7 @@ function ListaTema() {
 
   return (
     <Grid container className="grid-master-home">
-      <Grid item sm={2}></Grid>
+      <Grid item sm={2} md={2}></Grid>
       <Grid
         sm={8}
         item

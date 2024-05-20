@@ -93,18 +93,16 @@ function Login() {
         container
         direction="row"
         justifyContent="center"
-        alignItems="flex-end"
         style={{ minHeight: "100vh" }}
         className="grid-main"
       >
         <Grid
-          xs={6}
+          xs={5}
           alignItems="center"
-          justifyContent="flex-start"
           className="background-grid-left"
           style={{ minHeight: "100vh" }}
         >
-          <Box paddingY={18.7} paddingX={20}>
+          <Box>
             <Typography
               variant="h5"
               gutterBottom
@@ -165,40 +163,28 @@ function Login() {
                   align="center"
                   className="fonte"
                 >
-                  Novo no <span className="discoleta">Discoleta</span>?
+                  <Link to="/cadastro" className="criar-conta">
+                  Novo no <span className="discoleta">Discoleta</span>? Criar uma conta
+                  </Link>
                 </Typography>
-              </Box>
-              <Box>
-                <Link to="/cadastro" className="criar-conta">
-                  <Typography
-                    variant="subtitle1"
-                    gutterBottom
-                    align="center"
-                    className="criar-conta"
-                  >
-                    Criar uma conta
-                  </Typography>
-                </Link>
               </Box>
             </Box>
           </Box>
         </Grid>
         <Grid
-          xs={6}
-          justifyContent="flex-end"
-          alignItems="flex-end"
+          xs={7}
           className="background-grid-left-cadastro"
         >
           <Box className="posicao-logo">
             <img
-              src="https://cdn.discordapp.com/attachments/961308831533637685/980836772365881395/DISCOLETA_-_LOGO.jpg"
+              src="https://i.imgur.com/kbjcVuu.jpg"
               alt="logo discoleta"
-              width="45%"
-              height="45%"
-              className="animacao-logo"
+              width="60%"
+              height="60%"
+              className="animacao-logo-login"
             />
           </Box>
-          <div className="traiagulo-login"></div>
+          <div className="triangulo-login"></div>
         </Grid>
       </Grid>
     </>
