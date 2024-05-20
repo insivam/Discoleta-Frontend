@@ -1,5 +1,22 @@
+.AnimacaoLogo {
+  animation: fadeInLeft 3s;
+  border-radius: 50% 50% 50% 50% / 50% 50% 50% 50% !important;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 .grid-main{
     background-color: #056444;
+    overflow: hidden;
 }
 .imagem2 {
   background-image: url(https://i.imgur.com/d5bMdDJ.jpg);
@@ -28,17 +45,17 @@
   border-radius: 20px !important;
 }
 
-.animacao-logo {
-  border-radius: 50% 50% 50% 50% / 50% 50% 50% 50% !important;
-  border: 1px solid white;
-  animation: fadeInRight 2s;
-
+.animacao-logo-cadastro {
+  border-radius: 50% !important;
+  border: 1px solid #03422d ;
+  animation: fadeInLeft 2s;
+  margin-top:10%;
 }
 .posicao-logo {
-    
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  justify-content: center;
 }
 .background-grid-left-cadastro {
   background-color: #056444;
@@ -46,17 +63,46 @@
 }
 
 .background-grid-right {
-  border-radius: 50% 50% 50% 50% / 50% 0% 0% 50% !important;
   background-color: #151719 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .discoleta {
   color: #056444 !important;
 }
-.traiagulo {
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width:22em 0 0 42em;
-    border-color: transparent transparent transparent #03422d;
+.triangulo {
+  position: absolute;
+  border-style: solid;
+  border-width:22em 0 0 42em;
+  border-color: transparent transparent transparent #03422d;
+  bottom: 0;
+}
+
+.label-senha{
+  width: min-content;
+}
+
+@media only screen and (max-width: 1080px) {
+  .background-grid-left-cadastro{
+    display: none;
+  }
+
+  .grid-main, .background-grid-right {
+    width: 100%;
+    max-width: none !important;
+    flex-basis: auto !important;
+  }
+  .label-senha{
+    text-wrap: nowrap;
+  }
+  .caixa-label{
+    flex-direction: column;
+  }
+
+  .caixa-label label{
+    margin: 15px 0 0 0 !important;
+  }
 }

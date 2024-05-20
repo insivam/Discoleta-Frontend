@@ -108,28 +108,28 @@ function CadastroUsuario() {
       className="grid-main"
     >
       <Grid
-        xs={6}
+        xs={7}
         justifyContent="flex-start"
         alignItems="center"
         className="background-grid-left-cadastro"
       >
         <Box className="posicao-logo">
           <img
-            src="https://cdn.discordapp.com/attachments/961308831533637685/980836772365881395/DISCOLETA_-_LOGO.jpg"
+            src="https://i.imgur.com/kbjcVuu.jpg"
             alt="logo discoleta"
-            width="45%"
-            height="45%"
-            className="animacao-logo"
+            width="60%"
+            height="60%"
+            className="animacao-logo-cadastro"
           />
         </Box>
-        <div className="traiagulo"></div>
+        <div className="triangulo"></div>
       </Grid>
       <Grid
-        xs={6}
+        xs={5}
         className="background-grid-right"
         style={{ minHeight: "100vh" }}
       >
-        <Box paddingY={5.8} paddingLeft={14} paddingRight={10}>
+        <Box>
           <Typography
             variant="h5"
             gutterBottom
@@ -191,7 +191,7 @@ function CadastroUsuario() {
               />
             </div>
             <div className="caixa-label">
-              <label>Confirmar senha</label>
+              <label className="label-senha">Confirmar senha</label>
 
               <TextField
                 value={confirmarSenha}
