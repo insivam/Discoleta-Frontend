@@ -2,8 +2,8 @@
     text-decoration: none;
 }
 .tio{
-    width: 500px ;
-    max-width: 100%;
+    max-width: 500px ;
+    width: 90vw;
     border-radius: 10px !important;
 }
 .button-deletar{
@@ -12,4 +12,10 @@
     border-radius: 20px !important; 
     color: white !important;
     font-weight: bold !important;
+}
+
+@media only screen and (min-width: 600px) {
+    .tio{
+        width: 70vw;
+  }
 }
