@@ -31,7 +31,7 @@ main {
 .navbar {
   position: fixed;
   transition: width 600ms ease;
-  z-index: 1;
+  z-index: 999;
   background-color: #398c60;
 }
 
@@ -70,8 +70,12 @@ main {
 }
 
 .link-text {
-  display: none;
-  margin-left: 1rem;
+  display: inline-block;
+  opacity: 0;
+  clip-path: inset(0 100% 0 0);
+  transition: opacity 0.5s linear, clip-path 0.5s linear;
+  margin-left: 1.8rem;
+  text-wrap: nowrap;
 }
 
 .nav-link svg {
@@ -116,7 +120,7 @@ main {
 }
 
 .navbar:hover .logo svg {
-  transform: rotate(-270deg);
+  transform: rotate(-265deg);
 }
 
 .fotinha {
@@ -174,11 +178,19 @@ main {
   }
 
   .navbar:hover .link-text {
-    display: inline;
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transition: opacity 0.5s linear, clip-path 0.3s linear;
+  }
+
+  .navbar:not(:hover) .link-text {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    transition: opacity 0.1s linear, clip-path 0.1s linear;
   }
 
   .navbar:hover .logo svg {
-    margin-left: 11rem;
+    margin-left: 12rem;
   }
 
   .navbar:hover .logo-text {
