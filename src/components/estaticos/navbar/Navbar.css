@@ -163,6 +163,10 @@ main {
   .foto-nav {
     display: none;
   }
+
+  .link-text {
+    display: none !important;
+  }
 }
 
 /* Large screens */
